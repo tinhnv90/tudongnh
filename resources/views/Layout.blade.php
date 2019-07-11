@@ -18,17 +18,19 @@
     <meta property="ia:markup_url" content="{{url()->current()}}">
 
     <link rel="stylesheet" type="text/css" href="{{$style.'Stylesheet.css'}}">
+    <link rel="stylesheet" type="text/css" href="{{$style.'mobile.css'}}">
     @yield('stylesheet')
     <script src="{{$script.'Basescript.js'}}"></script>
+    <script src="https://kit.fontawesome.com/6776076893.js"></script>
     <meta name="copyright" content="Copyright © 2019 tudongnhahang.com by tinhnv">
 </head>
 <body>
-    <div id="layout-left"></div>
+    <div id="layout-left" class="hide-mobile"></div>
     <div id="container">
         @include('Common.header')
         @yield('content')
         @include('Common.footer')
     </div>
-    <div id="layout-right"></div>
+    <div id="layout-right" class="hide-mobile"></div>
 </body>
 </html>

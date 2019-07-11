@@ -1,0 +1,7 @@
+@media(max-width: 767px){
+	.mb{display: block;}
+	.hide-mobile{display: none;}
+	#container{
+		width: 100%;
+	}
+}

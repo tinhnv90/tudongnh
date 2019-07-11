@@ -1,19 +1,58 @@
 ul{list-style: none;}
 a{text-decoration: none;}
 body{
-	font-family: serif;
 	width: 100%;
-	min-height: 10px;
-	background: #fff;
-}
-#container{
-	width: 1150px;
-	min-height: 10px;
-	float: left;
-	background: #ccc;
-}
-#layout-left,#layout-right{
-	width: calc(50% - 575px);
 	min-height: 1px;
 	float: left;
+	margin: unset;
+	background-color: rgb(158, 132, 136);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    text-transform: none;
+    letter-spacing: 0px;
+    background-image: url("/tudongnh/public/images/icons/body-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h3{margin: unset;}
+.mb{display: none;}
+.hide-mobile{display: block;}
+.w100min{
+	width: 100%;
+	min-height: 10px;
+	float: left;
+}
+#container{
+	width: 1300px;
+	min-height: 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05);
+    float: left;
+}
+#layout-left,#layout-right{
+	width: calc(50% - 650px);
+	min-height: 1px;
+	float: left;
+}
+#topbar-top a{color: #fff}
+#topbar-top .container{
+	height: 25px;
+	padding: 5px 10px;
+	min-width: 10px;
+	float: right;
+}
+#topbar-top  .col-top{
+	height: 100%;
+	min-width: 10px;
+	padding: 0px 5px;
+	float: left;
+}
+#topbar-top i{
+	color: #fff;
 }
