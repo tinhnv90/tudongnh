@@ -1,0 +1,19 @@
+ul{list-style: none;}
+a{text-decoration: none;}
+body{
+	font-family: serif;
+	width: 100%;
+	min-height: 10px;
+	background: #fff;
+}
+#container{
+	width: 1150px;
+	min-height: 10px;
+	float: left;
+	background: #ccc;
+}
+#layout-left,#layout-right{
+	width: calc(50% - 575px);
+	min-height: 1px;
+	float: left;
+}
