@@ -1,7 +1,95 @@
 @media(max-width: 767px){
-	.mb{display: block;}
+	.mb,#nav-bar-mobile>.open-nav-mobile>.first{display: block;}
 	.hide-mobile{display: none;}
-	#container{
+	#container,#footer-upper>.col33,#footer-bottom>.col25,#wrapper>.col25-p{
 		width: 100%;
+	}
+	#wrapper>.col25-p{
+	    margin: 5px 15px;
+    	width: calc(100% - 30px);
+	}
+	#abouts-us>p{
+		width: calc(100% - 10px);
+		padding: 0px 5px;
+	}
+	#topbar-mobile{
+		height: 100px;
+		text-align: center;
+	}
+	#topbar-mobile>h1>a{
+		color: #fff;
+	}
+	#menu-mobile input{
+		background-color: transparent;
+	    height: 33px;
+	    width: calc(100% - 33px);
+	    box-sizing: border-box;
+	    float: left;
+	    border-right: unset;
+	}
+	#menu-mobile button{
+	    width: 33px;
+	    height: 33px;
+	    background-color: rgba(255, 255, 255, 0);
+	    color: #fff;
+	    padding: 0px;
+	    box-sizing: border-box;
+	    float: left;
+	    border-left: unset;
+	}
+	#menu-mobile>.search-form-mobile>form,#nav-bar-mobile{
+		width: calc(100% - 30px);
+		padding: 0px 15px;
+	}
+	#menu-mobile>.search-form-mobile{
+		margin-bottom: 2px;
+	}
+	#nav-bar-mobile{
+		height: 35px;
+	}
+	#nav-bar-mobile>.open-nav-mobile{
+		width: 35px;
+		height: 100%;
+		float: left;
+		background: rgb(77, 69, 80);
+		text-align: center;
+	}
+	#nav-bar-mobile .cart-mobile{
+		width: calc(100% - 35px);
+		height: 100%;
+		float: left;
+		background: #fff;
+	}
+	#nav-bar-mobile>.open-nav-mobile>i{
+	    font-size: 20px;
+    	padding-top: 7px;
+	}
+	#nav-bar-mobile>.cart-mobile>p{
+		width: calc(100% - 5px);
+		height: 100%;
+		padding:5px 5px 0px 0px;
+		margin: 0px;
+		color: rgb(77, 69, 80);
+		text-align: right;
+	}
+	#nav-bar-mobile>.cart-mobile>p>i{
+		margin-left: 10px;
+	}
+	#category-mobile{
+		background: #fff;
+		width: calc(100% - 30px);
+		margin: 0px 15px;
+		min-height: 10px;
+		float: left;
+		display: none;
+	}
+	#category-mobile>ul{
+	    margin-bottom: 5px;
+	    padding-left: 10px;
+	    width: calc(100% - 10px);
+	}
+	#category-mobile>ul>li{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		height: 30px;
 	}
 }

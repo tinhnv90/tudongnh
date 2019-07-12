@@ -14,8 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('style',asset('/public/css/local').'/');
-        View::share('script',asset('/public/js/local').'/');
+        $domain=asset('/public');
+        View::share('style',$domain.'/css/local/');
+        View::share('script',$domain.'/js/local/');
+        View::share('icons',$domain.'/images/icons/');
     }
 
     /**

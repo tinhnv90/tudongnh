@@ -23,10 +23,40 @@ body{
 h3{margin: unset;}
 .mb{display: none;}
 .hide-mobile{display: block;}
+.col50{width: 50%;height: 100%;float: left;}
+.col20{width: 20%;height: 100%;float: left;}
+.col25{width: 25%;height: 100%;float: left;}
+.col33{width: 33.33333%;height: 100%;float: left;}
+.bor-t{border-top: 1px solid rgba(255, 255, 255, 0.2);}
+.bor-b{border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
+.bor-box{border: 1px solid rgba(255, 255, 255, 0.2);}
 .w100min{
 	width: 100%;
 	min-height: 10px;
 	float: left;
+}
+.title-page{
+	width: 100%;
+	min-height: 10px;
+	padding: 5px 0px;
+}
+.nametext{
+    font-family: Roboto;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    color: rgb(152, 139, 146);
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+#header{
+	margin-bottom: 10px;
 }
 #container{
 	width: 1300px;
@@ -35,10 +65,16 @@ h3{margin: unset;}
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05);
     float: left;
 }
+#logo>h1>a{
+    color: #fff;
+}
 #layout-left,#layout-right{
 	width: calc(50% - 650px);
 	min-height: 1px;
 	float: left;
+}
+#topbar-top{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 #topbar-top a{color: #fff}
 #topbar-top .container{
@@ -52,7 +88,247 @@ h3{margin: unset;}
 	min-width: 10px;
 	padding: 0px 5px;
 	float: left;
+    margin: 0px 10px;
 }
 #topbar-top i{
 	color: #fff;
+}
+#topbar-top .langauge img{
+	width: 15px;
+	height: 15px;
+}
+#topbar-top .myaccount>ul{
+	position: absolute;
+    right: 80px;
+    margin-top: unset;
+    padding: 10px 20px;
+}
+#topbar-top .myaccount>ul>li{
+	margin-top: 8px;
+}
+#topbar-top .myaccount:hover .login{
+	display: block;
+	background: #fff;
+}
+#topbar-top .myaccount:hover .login a{
+	color: rgb(152, 139, 146);
+}
+#topbar-contact{
+    height: 100%;
+    min-width: 10px;
+    float: left;
+    padding: 5px 15px;
+
+}
+#topbar-contact .topbar-contact-email{
+	height: 100%;
+    min-width: 10px;
+    float: left;
+    padding-right: 20px;
+}
+#topbar-contact .topbar-contact-zalo{
+    height: 100%;
+    min-width: 10px;
+    float: left;
+}
+#topbar-contact .topbar-contact-zalo:first-child{
+	margin-right: 15px;
+}
+#topbar-contact a,#topbar-contact h3{
+    font-weight: normal;
+    font-size: 15px;
+}
+#topbar-contact a{
+    text-decoration: underline;	
+}
+#topbar-bottom{
+	height: 70px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+#topbar-bottom-right{
+	padding: 20px 0px 5px;
+	height: calc(100% - 30px);
+}
+#topbar-bottom-right .search{
+	width: 400px;
+	height: 37px;
+	float: left;
+}
+#topbar-bottom-right .cart{
+    min-width: 155px;
+    height: 25px;
+    float: left;
+    padding: 5px;
+    margin-left: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#topbar-bottom-right .cart h3{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: normal;
+}
+#form-search{
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	width: calc(100% - 2px);
+}
+#form-search input{
+	background-color: transparent;
+    border: none;
+    height: 35px;
+    padding: 5px 10px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+#form-search button{
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    padding: 0px;
+}
+#menu{
+	width: 100%;
+	height: 45px;
+	float: left;
+	background: rgb(255, 255, 255);
+}
+#menu>.nav-bar{
+    margin: 0px;
+    padding: 10px 0px;
+    width: 100%;
+    height: calc(100% - 20px);
+}
+#menu>.nav-bar li{
+    min-width: 10px;
+    height: 100%;
+    float: left;
+}
+#menu>.nav-bar>.parent>ul{
+    position: absolute;
+    min-height: 10px;
+    padding: 10px 0px;
+    background: rgb(255, 255, 255);
+    display: none;
+}
+#menu>.nav-bar h3>a:hover{
+ 	text-decoration: underline;
+}
+#menu>.nav-bar>.parent:hover ul{
+	display: block;
+}
+#menu>.nav-bar a{
+    font-family: Roboto;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    color: rgb(152, 139, 146);
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+#wrapper .col25-p{
+    min-height: 10px;
+    margin: 10px 6px;
+    width: calc(25% - 9px);
+    float: left;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+#wrapper>.first{
+    margin-left: unset;
+}
+#wrapper>.last{
+    margin-right: unset;
+}
+#wrapper>div>h4{
+    margin-top: unset;
+    margin-bottom: unset;
+    color: #fff;
+}
+/*END HEADER*/
+
+
+
+/*FOOTER*/
+#footer .title-page>h3{
+	margin-left: 40px;
+}
+#footer-upper .col33>ul{
+	width: calc(100% - 40px);
+}
+#footer-upper .col33>ul>li{
+	width: 100%;
+	height: 40px;
+	float: left;
+    margin-bottom: 20px;
+}
+#footer-product>ul>li{
+	margin-bottom: unset !important;
+}
+#footer-product>ul>li a{
+    color: rgb(255, 255, 255);
+	font-family: Roboto;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+#footer-upper .col33>ul>li h4,#footer-upper .col33>ul>li p{
+	margin-top: unset;
+	margin-bottom: unset;
+}
+#footer-upper .col33>ul>li>.contact-left{
+    width: 38px;
+    height: 33px;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+#footer-upper .col33>ul>li>.contact-right{
+	width: calc(100% - 50px);
+    height: 40px;
+    float: left;
+    padding-left: 10px;
+    overflow: hidden;
+}
+#footer-bottom{
+	padding-top: 20px
+}
+#footer-bottom .footer-infomation a{
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: normal;
+}
+#footer-bottom .footer-infomation a:hover{
+	text-decoration: underline;
+	color: rgb(77, 69, 80)
+}
+#footer-bottom .footer-infomation h4{
+	margin: 0px;
+    padding: 5px 0px;
+}
+
+
+
+
+/*COPY RIGHT*/
+#copyright{
+	text-align: center;
 }
