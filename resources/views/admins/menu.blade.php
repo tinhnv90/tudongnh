@@ -15,7 +15,7 @@
 		<li class="first-list-menu">
 			<span><input type="checkbox" name="subcategory" value="id" id="checkbox-all"></span>
 			<p class="w469-8">Tên Danh Mục</p>
-			<p class="listproduct-inhome">Dang Sách Sản Phẩm TRang Home</p>
+			<p class="listproduct-inhome">Dang Sách Sản Phẩm Trang Home</p>
 			<p class="col-order-menu">Thứ Tự</p>
 			<p>Thao Tác</p>
 		</li>

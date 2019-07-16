@@ -41,7 +41,7 @@ $(document).ready(function(){
               	});
 				$.ajax({
 			        type : 'POST',
-			        url  : window.location.href+'/delete',
+			        url  : window.location.origin+window.location.pathname+'/delete',
 			        data : {delete_id : selected_category},
 			        success :  function(data){
 			        	alert(data.resuilt_delete);

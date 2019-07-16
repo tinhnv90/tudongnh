@@ -439,7 +439,7 @@ content *{
 	margin-left: 10px;
 }
 #frameleft-folder li{
-	height: 30px;
+    min-height: 30px;
 	width: 100%;
 	padding-bottom: 15px;
 	border-left: 1px solid #ccc;
@@ -450,6 +450,9 @@ content *{
 #frameleft-folder li p:last-child {
     margin-top: 6px;
     margin-left: 2px;
+    padding-right: 5px;
+    width: calc(100% - 85px);
+    height: calc(100% - 6px);
 }
 .click-nav-tag-admin-menu{
 	font-weight: bold;

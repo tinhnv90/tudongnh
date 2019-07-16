@@ -203,9 +203,16 @@ class BaseAdminController extends Controller
         if(isset($request->page))
             $this->data['page']=$request->page;
 
+        $this->data['namecategory']='';
+        if(isset($request->search_namecategory)){
+            $this->data['namecategory']=$request->search_namecategory;
+            $this->data['urlpage'].='&search_namecategory='.$this->data['namecategory'];
+        }
+
+        $pathCt=stringProcessing::convert_PathUrl($this->data['namecategory']);
         $this->data['countproduct']=tblcategory::
-                                    where(['typeCt'=>'product','statusCt'=>1])
-                                    ->count();    
+            where(['typeCt'=>'product','statusCt'=>1,['pathCt','like','%'.$pathCt.'%']])
+            ->count();
         //end page
         $this->data['offset']=($this->data['page']-1)*$this->data['productNumberDisplayed'];
         $this->data['take']=$this->data['productNumberDisplayed'];
