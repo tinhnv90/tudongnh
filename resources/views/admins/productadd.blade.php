@@ -3,7 +3,7 @@
 @section('addlink','product')
 @section('titlepage','Danh Sách Sản Phẩm')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{asset('/public/css/admin/style-productadd.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style-productadd.css'}}">
 <script src="//cdn.ckeditor.com/4.12.0/full/ckeditor.js"></script>
 @stop
 @section('frameImages')

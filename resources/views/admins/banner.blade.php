@@ -3,7 +3,7 @@
 @section('addlink','product')
 @section('titlepage','Banner Seting')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{asset('/public/css/admin/banner.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'banner.css'}}">
 @stop
 @section('frameImages')
   @include('admins.choosefileimages')

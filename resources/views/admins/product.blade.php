@@ -2,10 +2,6 @@
 @section('title','Sản Phẩm')
 @section('addlink','product')
 @section('titlepage','Danh Sách Sản Phẩm')
-@section('stylesheet')
-	<script type="text/javascript" src="{{asset('/public/js/admin/zomfileimg.js')}}">
-	</script>
-@stop
 @section('container')
 <form method="get" action="{{asset('/admin/product')}}" id="container-product">
 	<div class="w100min">

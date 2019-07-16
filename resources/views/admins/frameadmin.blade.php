@@ -4,11 +4,10 @@
 	<title>Tủ Đông Nhà Hàng</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="_token" content="{{csrf_token()}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset('/public/css/admin/style.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{$cssopenfileimages}}">
-	<script type="text/javascript" src="{{asset('/public/js/jquery-3.4.0.js')}}"></script>
-	<script type="text/javascript" src="{{asset('/public/js/scriptadmin.js')}}"></script>
-	<script type="text/javascript" src="{{$js_zoom}}"></script>
+	<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style.css'}}">
+	<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'openfileimages.css'}}">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="{{$scriptAdmin.'scriptadmin.js'}}"></script>
 	@yield('stylesheet')
 </head>
 <body>

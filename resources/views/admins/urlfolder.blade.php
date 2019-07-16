@@ -2,7 +2,7 @@
 @section('title','Danh Mục')
 @section('addlink','images')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{asset('public/css/admin/style-manageimages.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style-manageimages.css'}}">
 @stop
 @section('processingimg')
 <form id="formupload" action="{{asset('/admin/images/uploadfie')}}" method="post" enctype="multipart/form-data" style="display: none;">

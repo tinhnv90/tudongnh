@@ -19,7 +19,7 @@
 			<p class="col-order-menu">Thứ Tự</p>
 			<p>Thao Tác</p>
 		</li>
-		<?php $i=0; ?>
+		<?php $i=0;?>
 		@foreach($listcategory as $categorys)
 			<?php $idcategory=$categorys['idcategory'];?>
 			@if($i>=$offset && $i<($take+$offset) && $idcategory==$categorys['idcategory'])

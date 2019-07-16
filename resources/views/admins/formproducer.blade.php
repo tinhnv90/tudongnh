@@ -3,7 +3,7 @@
 @section('addlink','producer')
 @section('titlepage','Thêm Bài Nhà Sản Xuất Mới')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{asset('/public/css/admin/producer.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'producer.css'}}">
 @stop
 @section('frameImages')
 	@include('admins.choosefileimages')

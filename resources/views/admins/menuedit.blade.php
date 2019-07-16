@@ -3,8 +3,7 @@
 @section('addlink','menu')
 @section('titlepage','Chỉnh Sửa Danh Mục')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" 
-	href="{{asset('/public/css/admin/style-menuadd.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style-menuadd.css'}}">
 <script src="//cdn.ckeditor.com/4.12.0/full/ckeditor.js"></script>
 @stop
 @section('frameImages')

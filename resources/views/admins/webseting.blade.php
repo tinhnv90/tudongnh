@@ -2,8 +2,8 @@
 @section('title','Thiết Lập Website')
 @section('titlepage','Thiết Lập Website')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{$csswebseting}}">
-<script type="text/javascript" src="{{$baseinfoweb}}"></script>
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'webdesign.css'}}">
+<script type="text/javascript" src="{{$scriptAdmin.'baseinfoweb.js'}}"></script>
 @stop
 @section('frameImages')
 	@include('admins.choosefileimages')

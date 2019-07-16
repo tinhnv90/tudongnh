@@ -3,7 +3,7 @@
 @section('addlink','producer')
 @section('titlepage','Danh Sách Nhà Sản Xuất')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{asset('/public/css/admin/producer.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'producer.css'}}">
 @stop
 @section('container')
 <form method="get" action="{{asset('/')}}" id="container-form-producer" class="w100min">

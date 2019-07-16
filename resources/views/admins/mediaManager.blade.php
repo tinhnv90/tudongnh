@@ -2,7 +2,7 @@
 @section('title','Danh Mục')
 @section('addlink','images')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{asset('public/css/admin/style-manageimages.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style-manageimages.css'}}">
 @stop
 @section('titlepage')
 	<p>Quản Lý Hình Ảnh</p><a href="{{asset('/admin/images')}}">images</a>

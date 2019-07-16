@@ -3,6 +3,7 @@
 /public/storage
 /public/ckeditor
 /public/ckfinder
+/public/images
 Homestead.yaml
 Homestead.json
 .env

@@ -3,10 +3,8 @@
 @section('addlink','post')
 @section('titlepage','Thêm Bài Đăng Mới')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" 
-	href="{{asset('/public/css/admin/style-productadd.css')}}">
-<link rel="stylesheet" type="text/css" 
-	href="{{asset('/public/css/admin/style-post.css')}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style-productadd.css'}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style-post.css'}}">
 <script src="//cdn.ckeditor.com/4.12.0/full/ckeditor.js"></script>
 @stop
 @section('frameImages')
