@@ -1,0 +1,1 @@
+<h1>Error 404</h1><p> Trở về <a href="{{asset('/')}}">Trang Chủ</a></p>

@@ -1,5 +1,5 @@
 ul{list-style: none;}
-a{text-decoration: none;}
+a{text-decoration: none;color: #fff;}
 body{
 	width: 100%;
 	min-height: 1px;
@@ -30,15 +30,23 @@ h3{margin: unset;}
 .bor-t{border-top: 1px solid rgba(255, 255, 255, 0.2);}
 .bor-b{border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
 .bor-box{border: 1px solid rgba(255, 255, 255, 0.2);}
-.w100min{
-	width: 100%;
-	min-height: 10px;
-	float: left;
-}
+.w100min{width: 100%;min-height: 10px;float: left;}
+.wh100{width: 100%;height: 100%;float: left;}
 .title-page{
 	width: 100%;
 	min-height: 10px;
 	padding: 5px 0px;
+    float: left;
+}
+.title-page>h3{
+    width: 100%;
+    min-height: 10px;
+    float: left;
+}
+.title-page>h3>span{
+    min-width: 10px;
+    height: 100%;
+    float: left;
 }
 .nametext{
     font-family: Roboto;
@@ -47,7 +55,6 @@ h3{margin: unset;}
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0px;
-    color: rgb(152, 139, 146);
     padding-top: 15px;
     padding-right: 20px;
     padding-bottom: 13px;
@@ -56,7 +63,8 @@ h3{margin: unset;}
     text-align: center;
 }
 #header{
-	margin-bottom: 10px;
+    margin-bottom: 40px;
+    border-bottom: 5px solid #fff;
 }
 #container{
 	width: 1300px;
@@ -251,14 +259,147 @@ h3{margin: unset;}
     margin-top: unset;
     margin-bottom: unset;
     color: #fff;
+    line-height: 1.7;
 }
 /*END HEADER*/
-
-
-
+/*CONTENT*/
+#product-mostview{
+    padding-bottom: 20px;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+}
+#product-mostview .scoll{
+    overflow: hidden;
+}
+.title-page{
+    border-width: 5px;
+    margin-bottom: 10px;
+    padding-bottom: unset;
+    border-color: #fff;
+}
+.title-page>h3>span{
+    height: 36px;
+    padding-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 10px 0px;
+}
+.scoll{
+    width: 100%;
+    min-height: 10px;
+    float: left;
+}
+.scoll>ul>li:last-child{
+    margin-right: unset !important;
+}
+.scoll>ul{
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding-left: unset;
+    margin: 0px;
+}
+.scoll li>.images{
+    height: 176.66px;
+    margin-bottom: 5px;
+}
+.scoll .images>a>img{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.scoll .content>.name{
+    height: 96px;
+    overflow: hidden;
+}
+.scoll .detail>.price{
+    font-family: Roboto;
+    line-height: 1.2;
+    font-weight: 700;
+    color: rgb(77, 69, 80);
+    font-size: 22px;
+    padding: 5px 0px;
+    float: left;
+}
+.scoll h4,.scoll p{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.scoll .detail>.cart{
+    width: 100%;
+    height: 30px;
+    float: left;
+}
+.scoll .detail>.rating{
+    height: 25px;
+    margin-bottom: 5px;
+}
+.scoll .cart>.add-cart{
+    width: calc(60% - 2px);
+    float: left;
+    height: calc(100% - 4px);
+    margin-bottom: unset;
+    text-align: center;
+    padding-top: 2px;
+    color: rgb(77, 69, 80);
+    border-color: rgb(77, 69, 80);
+}
+.scoll .cart>.add-cart:hover,.scoll .cart>span{
+    cursor: pointer;
+}
+.scoll .cart>span{
+    width: 15%;
+    float: right;
+    color: #fff;
+    text-align: center;
+    padding-top: 4px;
+    height: calc(100% - 4px);
+}
+#war-banner{
+    margin-bottom: 35px;
+}
+@media(min-width: 767px){
+    .unmar-right{margin-right: unset !important;}
+    div[id^="product-list-by-category"]>.scoll>ul>li{
+        margin-bottom: 25px;
+    }
+    div[id^="product-list-by-category"] .col-pro4{
+        width: 209.5px;
+    }
+    .col-pro6{
+        height: calc(100% - 20px);
+        width: calc(16.66666667% - 40px);
+        float: left;
+        padding: 10px 10px;
+        background: rgba(255, 255, 255, 0.2);
+        margin-right: 24px !important;
+    }
+    .col-pro5{
+        height: calc(100% - 20px);
+        width: calc(20% - 40px);
+        float: left;
+        padding: 10px 10.4px;
+        background: rgba(255, 255, 255, 0.2);
+        margin-right: 24px !important;
+    }
+    .col-pro4{
+        height: calc(100% - 20px);
+        width: calc(25% - 38px);
+        float: left;
+        padding: 10px 10px;
+        background: rgba(255, 255, 255, 0.2);
+        margin-right: 24px;
+    }
+}
+/*END CONTENT*/
 /*FOOTER*/
+#footer{
+    padding-top: 20px;
+}
 #footer .title-page>h3{
 	margin-left: 40px;
+    width: calc(100% - 40px);
+}
+#footer-upper{
+    padding-top: 25px;
 }
 #footer-upper .col33>ul{
 	width: calc(100% - 40px);
@@ -323,6 +464,12 @@ h3{margin: unset;}
 #footer-bottom .footer-infomation h4{
 	margin: 0px;
     padding: 5px 0px;
+}
+#abouts-us>p{
+    width: calc(100% - 40px);
+    padding: 0px 20px;
+    min-height: 10px;
+    float: left;
 }
 
 

@@ -14,3 +14,91 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/errorpage','BaseControllers@errorpage');
+
+Route::group(['prefix'=>'admin'],function(){
+	Route::auth();
+	Route::get('/','BaseAdminController@home');
+	Route::get('/home', 'HomeController@home');
+	Route::get('/dashboard','BaseAdminController@home');
+	Route::post('/choosefolder','BaseAdminController@choosefolder');
+	Route::get('/webseting','BaseAdminController@get_webseting');
+	Route::post('/webseting','BaseAdminController@post_webseting');
+	
+	Route::group(['prefix'=>'menu'],function(){
+		Route::get('/','BaseAdminController@menu');
+		Route::post('/delete','BaseAdminController@menudelete');
+		Route::get('/add','BaseAdminController@get_menuadd');
+		Route::post('/add','BaseAdminController@post_menuadd');
+		Route::post('/update-showproducthome','BaseAdminController@update_showproducthome');
+		Route::get('/edit-{idcategory}/{_tonken}','BaseAdminController@get_menuedit');
+		Route::post('/edit-{idcategory}/{_tonken}','BaseAdminController@post_menuedit');
+	});
+	Route::group(['prefix'=>'product'],function(){
+		Route::get('/','BaseAdminController@product');
+		Route::post('/','BaseAdminController@search_product');
+		Route::post('/delete','BaseAdminController@productdelete');
+		Route::get('/add','BaseAdminController@get_productadd');
+		Route::post('/add','BaseAdminController@post_productadd');
+		Route::get('/edit-{idproduct}/{_tonken}','BaseAdminController@get_productedit');
+		Route::post('/edit-{idproduct}/{_tonken}','BaseAdminController@post_productedit');
+	});
+	Route::group(['prefix'=>'post'],function(){
+		Route::get('/','BaseAdminController@post');
+		Route::post('/delete','BaseAdminController@postdelete');
+		Route::get('/add','BaseAdminController@get_postadd');
+		Route::post('/add','BaseAdminController@post_postadd');
+		Route::get('/edit-{idproduct}/{_tonken}','BaseAdminController@get_postedit');
+		Route::post('/edit-{idproduct}/{_tonken}','BaseAdminController@post_postedit');
+	});
+	Route::group(['prefix'=>'images'],function(){
+		Route::get('/','ManageImagesController@home');
+		Route::post('/updatetitlefile','ManageImagesController@updatetitlefile');
+		Route::post('/copyclipboard','ManageImagesController@copyclipboard');
+		Route::post('/pasteclipboard','ManageImagesController@pasteclipboard');
+		Route::post('/delete','ManageImagesController@imagesdelete');
+		Route::post('/uploadfie','ManageImagesController@uploadfileimg');
+		Route::post('/createfolder','ManageImagesController@createfolder');
+		Route::post('/createfolder-ajax','ManageImagesController@createfolderajax');
+		Route::get('/{urlfolder}','ManageImagesController@homeurl');
+		Route::get('/{urlfolder}/{urlfolder2}','ManageImagesController@homeurl2');
+		Route::get('/{urlfolder}/{urlfolder2}/{urlfolder3}',
+				'ManageImagesController@homeurl3');
+		Route::get('/{urlfolder}/{urlfolder2}/{urlfolder3}/{urlfolder4}','ManageImagesController@homeurl4');
+		Route::match(['get', 'post'], 'ajax-image-upload', 
+				'ManageImagesController@ajaxImage');
+		Route::post('/refreshfolder','BaseAdminController@listfolder');
+		Route::post('/deleteimages','ManageImagesController@deleteimages');
+	});
+	Route::group(['prefix'=>'producer'],function(){
+		Route::get('/','BaseAdminController@producer');
+		Route::match(['get','post'],'/add',
+				'BaseAdminController@addproducer');
+		Route::match(['get','post'],'/edit/{pathproducer}',
+				'BaseAdminController@editproducer');
+		Route::post('/delete','BaseAdminController@deleteproducer');
+	});
+	Route::group(['prefix'=>'banner'],function(){
+		Route::get('/','BaseAdminController@banner');
+		Route::get('/li-slide','BaseAdminController@li_slide');
+		Route::get('/li-service','BaseAdminController@li_service');
+		Route::get('/li-custom','BaseAdminController@li_custom');
+		Route::match(['get','post'],'/edit',
+				'BaseAdminController@editbanner');
+	});
+	Route::match(['get','post'],'/introduce',
+				'BaseAdminController@introduce');
+	Route::group(['prefix'=>'webdesign'],function(){
+		Route::match(['get','post'],'/editheader',
+				'WebDesignBasis@editheader');
+		Route::match(['get','post'],'/editcontent',
+				'WebDesignBasis@editcontent');
+		Route::match(['get','post'],'/editfooter',
+				'WebDesignBasis@editfooter');
+		Route::match(['get','post'],'/edithomepage',
+				'WebDesignBasis@edithomepage');
+		Route::get('/append-child','WebDesignBasis@append_child');
+		Route::post('/insertnode','WebDesignBasis@insertnode');
+		Route::post('/deletenode','WebDesignBasis@deletenode');
+	});
+});

@@ -1,6 +1,8 @@
 /vendor
 /node_modules
 /public/storage
+/public/ckeditor
+/public/ckfinder
 Homestead.yaml
 Homestead.json
 .env
