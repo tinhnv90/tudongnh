@@ -29,9 +29,9 @@
 <body>
     <div id="layout-left" class="hide-mobile"></div>
     <div id="container">
-        @include('Common.header')
+        @include('Common.Header')
         @yield('content')
-        @include('Common.footer')
+        @include('Common.Footer')
     </div>
     <div id="layout-right" class="hide-mobile"></div>
 </body>

@@ -1,0 +1,118 @@
+#tag2{
+	display: none;
+}
+#tag1{
+	width: 100%;
+}
+#tag1 ul:first-child,#tag2 ul:first-child{
+	width: 28%;
+    min-height: 270px;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+#tag1 ul:first-child label,#tag2 ul:first-child label{
+	float: right;
+	margin-right: 20px;
+	margin-top: 8px;
+}
+#tag1 .wh100 span{
+	width: 0px;
+	height: 0px;
+	padding-top: 0px !important;
+	padding-left: 0px !important;
+	float: right;
+	color: red;
+	border: unset;
+}
+#container-form-prduct-add ul li{
+	width: 100%;
+	height: 65px;
+}
+#container-form-prduct-add ul li input{
+	width: 98%;
+	height: 30px;
+}
+#container-form-prduct-add button{
+	width: 150px;
+    height: 30px;
+    margin: 50px 0px;
+    margin-left: 300px;
+    background: #1e91cf;
+    margin-top: 40px;
+}
+.textarea-content{
+	height: 350px !important;
+}
+#cke_1_top{
+	width: 99%;
+}
+#cke_1_contents,#cke_1_toolbox{
+	width: 100%;
+}
+
+#cke_post_content{
+	margin-top: 15px;
+}
+#cke_post_content span{
+    height: auto !important;
+    border: unset !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    font-weight: normal !important;
+}
+#container{
+	    min-height: 800px;
+}
+
+.select-option{
+	width: 250px;
+	height: 28px;
+}
+#producer-new{
+	margin-left: 30px;
+}
+.imgsizre-product{
+	height: 80%;
+	width: 65px;
+}
+.imgsizre-product:hover{
+	cursor: pointer;
+}
+.spcodepro{
+	padding-top: 0px !important;
+    padding-left: 0px !important;
+    width: unset;
+    height: unset !important;
+    float: right !important;
+    border: unset !important;
+    color: red;
+}
+#container-form-prduct-add p{
+	width: 100% !important;
+    padding-top: 3px !important;
+    text-align: left;
+    border: unset !important;
+}
+.error-tag1,.error-tag2{color: red !important;float: right !important;}
+#category-new{margin-left: 30px;}
+input[name='txtnumberpro']{
+	width: 30% !important;
+}
+input[name='txtunitpro']{
+	width: 30% !important;
+}
+.unitpro{
+	margin-left: 70px;
+    margin-right: 15px;
+    padding-top: 11px;
+}
+select[name="txtstatuspro"]{
+	width: 150px;
+    height: 30px;	
+}
+#tag3{
+	display: none;
+}
+#cke_1_contents{
+	height: 600px !important;
+}

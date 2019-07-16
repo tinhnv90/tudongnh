@@ -1,0 +1,155 @@
+#content-top-right{
+	display: none;
+}
+.tag-page{
+	border-bottom: 1px solid #ccc;
+}
+.tag{
+	min-width: 100px;
+	height: 45px;
+	border-right: 1px solid #ccc;
+}
+.padlr10{
+	padding: 0px 10px;
+}
+.tag h4{
+	width: 100%;
+	height: calc(100% - 15px);
+	padding-top: 15px;
+	text-align: center;
+	color: #4c4d5a;
+}
+.tag h4:hover{
+	cursor: pointer;
+	color: #000;
+	text-decoration: underline;
+}
+.choose-tag{
+	color: #000;
+	text-decoration: underline;
+}
+#infoweb{
+	padding-top: 20px;
+}
+.listlabel{
+	width: 25%;
+	min-height: 10px;
+}
+.listinput{
+	width: 75%;
+	min-height: 10px;
+}
+#infoweb ul li{
+	width: 100%;
+    height: 30px;
+    padding-top: 25px;
+	border-bottom: 1px solid #ededed;
+    padding-bottom: 20px;
+}
+#infoweb .listlabel li{
+	padding-left: 20px;
+	width: calc(100% - 20px);
+}
+#infoweb .listlabel li .start{
+	border: unset;
+	display: contents;
+	color: red;
+}
+#infoweb .listinput li input{
+	width: 500px;
+	height: 25px;
+}
+#infoweb .listinput li textarea{
+	max-height: 63px;
+	min-height: 63px;
+	min-width: 500px;
+	max-width: 500px;
+}
+#infoweb textarea{
+	padding-top: 5px;
+}
+#infoweb .listinput li select{
+	width: 200px;
+	height: 25px;
+}
+.adress-area{
+	height: 65px !important;
+}
+.submit-infoweb{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.submit-infoweb button{
+	width: 150px;
+    height: 25px;
+    float: unset !important;
+}
+.tag-images ul:first-child{
+	width: 25%;
+    min-height: 10px;
+}
+.tag-images ul:last-child{
+    width: 75%;
+    min-height: 10px;
+}
+.tag-images p{
+	border: unset !important;
+	margin-left: 20px;
+}
+.tag-images img:hover{
+	cursor: pointer;
+}
+.logoweb,.iconweb{
+	height: 120px;
+}
+.iconweb{
+	padding: 30px 0px;
+}
+.logoweb{
+	border-bottom: 1px solid #ccc;
+}
+.logoweb img{
+	max-height: 100px;
+	max-width: 250px;
+	border: 1px solid #ccc;
+}
+.iconweb img{
+	max-width: 100px;
+	min-height: 100px;
+	border: 1px solid #ccc;
+}
+.tagnone{
+	display: none;
+}
+#container{
+	display: table;
+}
+.tag-analytics label,.tag-mastertool label{
+	margin-top: 120px;
+}
+.tag-analytics textarea,.tag-mastertool textarea{
+	min-width: 550px;
+	max-width: 550px;
+	min-height: 250px;
+	max-height: 250px;
+}
+.tag-appface label{
+	width: calc(100% - 20px);
+	text-align: right;
+	height: 35px;
+	padding-right: 20px;
+}
+.tag-appface label:first-child{
+    margin-bottom: 130px;
+    margin-top: 7px;
+}
+.tag-appface input{
+	width: 50%;
+    height: 25px;
+    margin-bottom: 30px;
+}
+.tag-appface textarea{
+    width: 80%;
+    height: 250px;
+}

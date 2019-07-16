@@ -1,0 +1,88 @@
+#content-top-right{display: none;}
+#manageimages{
+	width: 97.3%;
+    height: 550px;
+    padding-top: 30px;
+    padding-left: 25px;
+    overflow-y: scroll;
+}
+#manageimages li{
+	width: 145px;
+    height: 200px;
+    margin-right: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+#manageimages li p{
+	width: 100%;
+    text-align: center;
+    word-break: break-all;
+    margin-top: 5px;
+}
+#manageimages li img{
+	max-width: 100%;
+	max-height: 100%;
+	float: unset;
+}
+#manageimages li img:hover{
+	cursor: pointer;
+}
+.title-page p{
+	margin-right: 30px;
+}
+.title-page a{
+	text-decoration: underline;
+	color: unset;
+}
+.title-page span{
+	margin: 0px 5px;
+}
+.frameImg{
+	width: 100%;
+	height: 145px;
+}
+#container{overflow: hidden;}
+
+#processingImg{
+	width: 100%;
+    height: 70px;
+}
+#processingImg ul{
+	height: 100%;
+    width: 60%;
+    float: right;
+    text-align: center;
+}
+#processingImg ul li{
+	height: 35px;
+	min-width: 80px;
+}
+#processingImg ul li img{
+	width: 35px;
+	height: 35px;
+	float: unset;
+}
+#processingImg ul li p{
+	width: 100%;
+	margin-top: 5px;
+}
+.checkboxallimg{
+	margin-left: 20px;
+	margin-right: 5px;
+}
+#manageimages li p input{
+	height: 20px;
+    width: 100%;
+    display: none;
+}
+.inpall{
+	margin-top: 25px;
+}
+#ispaste{
+	width: 50px;
+    height: 40px;
+    background: #ccc;
+    opacity: 0.6;
+    position: absolute;
+    margin-left: 15px;
+}

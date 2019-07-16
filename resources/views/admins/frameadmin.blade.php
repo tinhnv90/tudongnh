@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quản Lý Máy Bớm Hút Bùn</title>	
+	<title>Tủ Đông Nhà Hàng</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="_token" content="{{csrf_token()}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('/public/css/admin/style.css')}}">

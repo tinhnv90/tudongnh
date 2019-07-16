@@ -64,5 +64,5 @@
 		@endforeach
 	</ul>
 </form>
-@include('local.vinakitnet.content.components.page')
+@include('Common.page')
 @stop

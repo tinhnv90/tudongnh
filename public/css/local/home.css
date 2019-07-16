@@ -110,6 +110,12 @@
     font-weight: bold;
     text-decoration: underline;
 }
+#post>.scoll .content>.name{
+    height: 70px;
+}
+#post .short-description>p{
+    font-size: 17px;
+}
 #post .scoll{
     overflow: hidden;
 }

@@ -73,8 +73,13 @@ h3{margin: unset;}
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05);
     float: left;
 }
+#logo>h1{
+    margin: 5px 0px 10px;
+}
 #logo>h1>a{
     color: #fff;
+    font-family: cursive;
+    font-size: 45px;
 }
 #layout-left,#layout-right{
 	width: calc(50% - 650px);

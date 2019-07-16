@@ -1,0 +1,221 @@
+#config-style-body{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0px;
+}
+#config-style-body div{
+	width: 500px;
+    min-height: 150px;
+    float: unset;
+    margin: 0px auto;
+    text-align: center;
+}
+#config-style-body label{
+	margin-right: 20px;
+    margin-top: 50px;
+}
+#config-style-body textarea{
+	min-width: 350px;
+    max-width: 350px;
+    min-height: 120px;
+    max-height: 120px;
+}
+#config-style-body button{
+	width: 100px;
+    height: 25px;
+    margin-left: 250px;
+    margin-top: 10px;
+}
+#config-content-home{
+    width: calc(100% - 20px);
+    min-height: 10px;
+    padding:10px;
+}
+#config-content-home .edit{
+    min-width: 10px;
+    height: 32px;
+    float: right;
+}
+.action p{
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+.action p:hover,.tag-bar>ul>li:hover{
+    cursor: pointer;
+}
+.action .insert,.action .update{
+    background: blue;
+}
+.action .delete{
+    background: red;
+}
+.parent-wh{
+    width: calc(100% - 22px);
+    min-height: 150px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#config-content-home .action .input-order{
+    width: 30px;
+    text-align: center;
+    margin-right: 5px;
+}
+#config-content-home .frame-edit-css{
+    width: 500px;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    display: none;
+}
+.frame-edit-css>ul{
+    display: none;
+    background: #fff;
+    padding: 30px;
+    width: calc(100% - 64px);
+    border: 2px solid #00aeee;
+    border-bottom: unset;
+    max-height: 342px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.exits-style{
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    font-size: 21px;
+    background: red;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+.frame-edit-css>ul>li{
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid rgb(237, 237, 237);
+    padding: 10px 0px;
+    color: #666;
+}
+.frame-edit-css>ul>li>label{
+    width: 86px;
+    max-height: 100%;
+    overflow: hidden;
+}
+.frame-edit-css>ul>li>input,.frame-edit-css>ul>li>select{
+    width: calc(100% - 100px);
+    height: 25px;
+    margin-left: 10px;
+    background-color: #f5f8f9;
+    background-image: none;
+    border: 1px solid #c7d6db;
+}
+.frame-edit-css .first{
+    display: block;
+}
+#config-content-home .title-page{
+    background: #00aeee;
+    height: 40px;
+    color: #fff;
+    border-radius: 20px 20px 0px 0px;
+    margin-bottom: 0px;
+    border-bottom: unset;
+}
+#config-content-home .tag-bar{
+    width: calc(100% - 15px);
+    padding-left: 15px;
+    background: #00aeee;
+    min-height: 10px;
+}
+.tag-bar>ul>li{
+    min-width: 10px;
+    height: 25px;
+    margin-right: 5px;
+    padding: 10px 10px 5px;
+    color: #fff;
+}
+.tag-bar .active{
+    background: #fff;
+    color: #00aeee;
+    font-weight: bold;
+}
+.submit-save{
+    padding: 20px 0px;
+    border: 2px solid #00aeee;
+    border-top: unset;
+    width: calc(100% - 4px);
+    min-height: 10px;
+    text-align: center;
+    background: #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+.submit-save>button{
+    width: 100px;
+    height: 30px;
+    float: unset !important;
+    margin: 0px auto;
+    background: #00aeee;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: unset;
+    border-radius: 5px;
+}
+.bkgimages>img{
+    max-width: calc(100% - 100px);
+    max-height: 100px;
+}
+.min-h{
+    height: unset !important;
+    min-height: 10px;
+}
+.box-margin,.box-border,.box-padding{
+    min-height: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.box-margin{
+    width: calc(100% - 88px);
+}
+.box-border{
+    width: calc(100% - 106px);
+    background-color: #ddd;
+}
+.box-padding{
+    width: calc(100% - 106px);
+    background-color: #efefef;
+}
+.Style .min-h input{
+    width: 40px;
+    height: 20px;
+    background-color: #f5f8f9;
+    border: 1px solid #c7d6db;
+}
+input[name='margin_left'],input[name='margin_right']{
+    margin: 112px 5px 0px;
+}
+input[name='border_left'],input[name='border_right']{
+    margin: 56px 5px 0px;
+}
+input[name='margin_top'],input[name='border_top'],input[name='padding_top']{
+    margin-bottom: 5px;
+}
+input[name='margin_bottom'],input[name='border_bottom'],input[name='padding_bottom']{
+    margin-top: 5px;
+}
+.unfloat{
+    float: unset !important;
+}
+.box-name{
+    width: 64px;
+}
+#config-content-home .action input{
+    height: 25px;
+}

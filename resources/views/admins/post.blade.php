@@ -44,5 +44,5 @@
 			@endforeach
 		</ul>
 </form>
-@include('local.default.content.components.page')
+@include('Common.page')
 @stop

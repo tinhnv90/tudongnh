@@ -1,0 +1,20 @@
+.shortdes{
+	height: 85px !important;
+    margin-bottom: 30px;
+}
+.shortdes textarea{
+	max-height: 85px;
+	width: 98%;
+	height: 85px;
+}
+select[name='slidcategory']{
+	width: 150px;
+    height: 30px;
+}
+#tag2{
+	width: 100%
+}
+select[name='txtstatuspost']{
+	width: 150px;
+    height: 30px;
+}

@@ -64,7 +64,7 @@
 		</div>
 		<div id="topbar-bottom" class="w100min">
 			<div id="logo" class="col50">
-				<h1><a href="{{asset('/')}}" title="Trang Chủ">TuDongNhaHang</a></h1>
+				<h1><a href="{{asset('/')}}" title="Trang Chủ">TuDongNhaHang.Com</a></h1>
 			</div>
 			<div id="topbar-bottom-right" class="col50">
 				<div class="search">
