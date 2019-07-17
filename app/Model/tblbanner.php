@@ -12,4 +12,11 @@ class tblbanner extends Model
     protected $fillable = [
         'idbanner', 'nameBn', 'pathBn' ,'idImg','type','listIdProduct','promotion','status',
     ];
+
+    public function getImages(){
+    	return $this->belongsTo(tblimage::class,'idImg');
+    }
+    public function getSeo(){
+        return $this->hasOne(tblseo::class,'idproduct');
+    }
 }

@@ -26,10 +26,20 @@
     height: 60px;
     float: left;
 }
+#special-article>.first-artical>.content>h2{
+    padding-left: 5px;
+    width: calc(100% - 5px);
+}
 /*------------#war-banner--------------*/
+#war-banner>.col33{
+    margin-right: 15px;
+}
+#war-banner>.col33:last-child{
+    margin-right: unset;
+}
 #war-banner .warpper{
     height: 180px;
-    width: calc(100% - 10px);
+    width: 100%;
     float: left;
 }
 #war-banner>.col33>.w-center{
@@ -37,4 +47,14 @@
 }
 #war-banner>.col33>.last{
     float: right;
+}
+@media(min-width: 767px){
+    #war-banner>.col33{
+        width: calc(33.33333% - 10px);
+    }
+}
+@media(max-width: 767px){
+    #war-banner>.col33{
+        width: 100%;
+    }
 }

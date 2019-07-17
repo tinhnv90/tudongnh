@@ -14,7 +14,27 @@
 				<i class="fas fa-bars"></i>
 			</div>
 			<div class="cart-mobile">
-				<p><a href="{{asset('/')}}" title="thông tin giỏ hàng"><span class="cart-item">{{'0'}}</span> Sản Phẩm - <span class="cart-price">{{'0'}}</span> vnđ <i class="fas fa-shopping-cart"></i></a></p>
+				<p>
+					<a href="{{asset('/cart')}}" class="wh100" 
+						title="thông tin giỏ hàng">
+						<span class="cart-item">{{$productNumberInTheCart}}</span>
+						<i class="fas fa-shopping-cart"></i>
+					</a>
+				</p>
+				<p>
+					<a href="{{asset('/wishlist')}}" class="wh100" 
+						title="thông tin giỏ hàng">
+						<span class="totalWishList-mb">{{$productNumberInTheWishlist}}</span>
+						<i class="fas fa-heart"></i>
+					</a>
+				</p>
+				<p>
+					<a href="{{asset('/compare')}}" class="wh100" 
+						title="thông tin giỏ hàng">
+						<span class="totalCompare-mb">{{$productNumberInTheCompare}}</span>
+						<i class="fas fa-retweet"></i>
+					</a>
+				</p>
 			</div>
 		</div>
 		<div id="category-mobile">
@@ -31,10 +51,22 @@
 		<div id="topbar-top" class="w100min">
 			<div class="container">
 				<div class="check-cart col-top">
-					<a href="cart">Giỏ Hàng</a>
+					<a class="wh100" href="{{asset('/wishlist')}}" 
+						title="sản phẩm yêu thích">
+						<i class="fas fa-heart"></i>
+						<p>Sản Phẩm Ưu Thích (<span class="totalWishList">{{$productNumberInTheWishlist}}</span>)</p>
+					</a>
+				</div>
+				<div class="check-cart col-top">
+					<a class="wh100" href="{{asset('/compare')}}" 
+						title="so sánh sản phẩm">
+						<i class="fas fa-retweet"></i>
+						<p>So Sánh Sản Phẩm (<span class="totalCompare">{{$productNumberInTheCompare}}</span>)</p>
+					</a>
 				</div>
 				<div class="myaccount col-top">
-					<a href="{{asset('/myaccount')}}" title="My Account" class="account">
+					<a href="{{asset('/myaccount')}}" title="My Account" 
+						class="account">
 						<i class="fa fa-user"></i>
 						<i class="fas fa-caret-down"></i>
 					</a>
@@ -74,28 +106,41 @@
 					</form>
 				</div>
 				<div class="cart">
-					<h3><span class="cart-item" data-cart='{{"0"}}'>{{'0'}}</span> Sản phẩm - <span class="cart-price" data-price='{{0}}'>{{'0'}}</span> vnđ</h3>
+					<h3 class="wh100">
+						<a class="wh100" href="{{asset('/cart')}}"><span class="cart-item" data-cart='{{$productNumberInTheCart}}'>{{$productNumberInTheCart}}</span> Sản phẩm - <span class="cart-price" data-price='{{0}}'>{{'0'}}</span> vnđ</a>
+					</h3>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="menu" class="hide-mobile">
+	<div id="menu" class="hide-mobile w100min">
 		<ul class="nav-bar">
+			@foreach($listCategory as $category)
+			@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home')
 			<li>
-				<h3><a href="#">Trang chủ</a></h3>
+				<h3><a href="{{asset('/')}}" 
+					title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
+				</h3>
 			</li>
-			<li>
-				<h3><a href="#">Trang chủ</a></h3>
+			@else
+			<li @if(count($category['children'])>0) class="parent" @endif>
+				<h3><a href="{{asset('/'.$category['pathCt'])}}" 
+					title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
+				</h3>
+				@if(count($category['children'])>0)
+					<ul>
+					@foreach($category['children'] as $subcategory)
+						<li>
+							<h3>
+								<a href="{{$subcategory['pathCt']}}" title="{{$subcategory['titleCt']}}">{{$subcategory['titleCt']}}</a>
+							</h3>
+						</li>
+					@endforeach
+					</ul>
+				@endif
 			</li>
-			<li class="parent">
-				<h3><a href="#">Trang chủ</a></h3>
-				<ul>
-					<li><h3><a href="#">Trang chủ</a></h3></li>
-				</ul>
-			</li>
-			<li>
-				<h3><a href="#">Trang chủ</a></h3>
-			</li>
+			@endif
+			@endforeach
 		</ul>
 	</div>
 	<div id="wrapper" class="w100min">

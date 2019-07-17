@@ -1,19 +1,12 @@
 <div id="slideshow" class="slide bor-box">
 	<ul class="w100min">
+	@foreach($listslide as $slide)
 		<li class="w100min">
-			<a href="{{asset('/')}}" title="{{'title name'}}">
-				<img src="{{asset('/public/images/banner/banner-may-bom-bun-3.jpg')}}" alt="{{'alt images'}}">
+			<a href="{{$slide['pathBn']}}" title="{{$slide['nameBn']}}">
+				<img src="{{$dir.$slide['get_images']['srcImg']}}" 
+					alt="{{$slide['get_images']['altImg']}}">
 			</a>
 		</li>
-		<li class="w100min">
-			<a href="{{asset('/')}}" title="{{'title name'}}">
-				<img src="{{asset('/public/images/banner/banner-may-bom-bun-4.jpg')}}" alt="{{'alt images'}}">
-			</a>
-		</li>
-		<li class="w100min">
-			<a href="{{asset('/')}}" title="{{'title name'}}">
-				<img src="{{asset('/public/images/banner/banner-may-bom-bun-5.jpg')}}" alt="{{'alt images'}}">
-			</a>
-		</li>
+	@endforeach
 	</ul>
 </div>

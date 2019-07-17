@@ -5,7 +5,7 @@
 				<img class="wh100" src="{{asset('/public/images/banner/banner-may-bom-bun-4.jpg')}}" alt="{{'alt images'}}">
 			</a>
 		</div>
-		<div class="content">
+		<div class="content w100min">
 			<h2 class="w100min bor-b"><a href="#" title="bài viết nổi bật về tủ đông nhà hàng">bài viết nổi bật về tủ đông nhà hàng</a></h2>
 		</div>
 	</div>

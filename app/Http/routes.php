@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/add-cart', 'BaseControllers@add_cart');
+Route::post('/add-wishlist', 'BaseControllers@add_wishlist');
+Route::post('/add-compare', 'BaseControllers@add_compare');
 Route::get('/errorpage','BaseControllers@errorpage');
 
 Route::group(['prefix'=>'admin'],function(){

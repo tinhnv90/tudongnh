@@ -20,6 +20,10 @@ class ServiceProvider extends  \Illuminate\Support\ServiceProvider{
         View::share('script',$domain.'/js/local/');
         View::share('scriptAdmin',$domain.'/js/admin/');
         View::share('icons',$domain.'/images/icons/');
+        View::share('urlpro',asset('/san-pham').'/');
+        View::share('urlcate',asset('/danh-muc').'/');
+        View::share('urlpost',asset('/tin-tuc').'/');
+        View::share('dir',$domain);
     }
     public function register(){}
 }

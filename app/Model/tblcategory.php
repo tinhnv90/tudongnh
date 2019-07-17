@@ -25,4 +25,7 @@ class tblcategory extends Model
     public function imagescategory(){
         return $this->belongsTo(tblimage::class,'idImg');
     }
+    public function seocategory(){
+        return $this->hasOne(tblseo::class,'idImg');
+    }
 }

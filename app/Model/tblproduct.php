@@ -13,13 +13,13 @@ class tblproduct extends Model
     protected $fillable = [
         'idproduct', 'idcategory','idProducer', 'namePro','pathPro','codepro','idImg','moreImg','contentPro','numview','statusPro'
     ];
-    public function getproductDetail(){
+    public function getDetail(){
     	return $this->hasOne(tblproductDetail::class,'idproduct');
     }
-    public function getproductImages(){
+    public function getImages(){
     	return $this->belongsTo(tblimage::class,'idImg');
     }
-    public function listproducthome(){
-        
+    public function getSeo(){
+        return $this->hasOne(tblseo::class,'idproduct');
     }
 }

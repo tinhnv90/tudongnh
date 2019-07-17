@@ -12,4 +12,11 @@ class tblpost extends Model
     protected $fillable = [
         'idPost', 'id', 'idcategory','titlePost' ,'pathPost','shortDescription' ,'idImg','contentPost','numview','status','quote'
     ];
+
+    public function getImages(){
+    	return $this->belongsTo(tblimage::class,'idImg');
+    }
+    public function getSeo(){
+        return $this->hasOne(tblseo::class,'idproduct');
+    }
 }
