@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{$style.'mobile.css'}}">
     @yield('stylesheet')
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="{{$script.'BaseScript.js'}}"></script>
+    <script src="{{$script.'parchaseEvent.js'}}"></script>
     @yield('javascript')
     <script src="https://kit.fontawesome.com/6776076893.js"></script>
     <meta name="copyright" content="Copyright © 2019 tudongnhahang.com by tinhnv">

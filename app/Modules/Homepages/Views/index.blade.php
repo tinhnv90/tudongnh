@@ -1,7 +1,7 @@
 @extends('Layout')
-@section('title')Tủ Đông Nhà Hàng @stop
-@section('description')Tủ Đông Nhà Hàng @stop
-@section('keywords')Tủ Đông Nhà Hàng @stop
+@section('title')Tủ Đông Inox Nhà Hàng @stop
+@section('description')Tủ Đông Inox Nhà Hàng @stop
+@section('keywords')Tủ Đông Inox Nhà Hàng @stop
 @section('stylesheet')
 <link rel="stylesheet" type="text/css" href="{{$style.'home.css'}}">
 <link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">

@@ -39,11 +39,19 @@
 		</div>
 		<div id="category-mobile">
 			<ul class="w100min">
-				<li class="w100min"><h3><a class="nametext" href="{{asset('/')}}" title="{{'category name'}}">{{'category name'}}</a></h3></li>
-				<li class="w100min"><h3><a class="nametext" href="{{asset('/')}}" title="{{'category name'}}">{{'category name'}}</a></h3></li>
-				<li class="w100min"><h3><a class="nametext" href="{{asset('/')}}" title="{{'category name'}}">{{'category name'}}</a></h3></li>
-				<li class="w100min"><h3><a class="nametext" href="{{asset('/')}}" title="{{'category name'}}">{{'category name'}}</a></h3></li>
-				<li class="w100min"><h3><a class="nametext" href="{{asset('/')}}" title="{{'category name'}}">{{'category name'}}</a></h3></li>
+				@foreach($listCategory as $category)
+				<li class="w100min">
+					<h3>
+						@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home')
+							<a class="nametext" href="{{asset('/')}}" 
+								title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
+						@else
+							<a class="nametext" href="{{$urlcate.$category['pathCt']}}" 
+								title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
+						@endif
+					</h3>
+				</li>
+				@endforeach
 			</ul>
 		</div>
 	</div>
@@ -51,28 +59,34 @@
 		<div id="topbar-top" class="w100min">
 			<div class="container">
 				<div class="check-cart col-top">
-					<a class="wh100" href="{{asset('/wishlist')}}" 
+					<a class="wh100" href="{{asset('/san-pham-au-thich')}}" 
 						title="sản phẩm yêu thích">
 						<i class="fas fa-heart"></i>
-						<p>Sản Phẩm Ưu Thích (<span class="totalWishList">{{$productNumberInTheWishlist}}</span>)</p>
+						<p>Sản Phẩm Ưa Thích (<span class="totalWishList">{{$productNumberInTheWishlist}}</span>)</p>
 					</a>
 				</div>
 				<div class="check-cart col-top">
-					<a class="wh100" href="{{asset('/compare')}}" 
+					<a class="wh100" href="{{asset('/so-sanh')}}" 
 						title="so sánh sản phẩm">
 						<i class="fas fa-retweet"></i>
 						<p>So Sánh Sản Phẩm (<span class="totalCompare">{{$productNumberInTheCompare}}</span>)</p>
 					</a>
 				</div>
 				<div class="myaccount col-top">
-					<a href="{{asset('/myaccount')}}" title="My Account" 
+					<a href="{{asset('/tai-khoan')}}" title="My Account" 
 						class="account">
 						<i class="fa fa-user"></i>
 						<i class="fas fa-caret-down"></i>
 					</a>
 					<ul class="mb login">
-						<li><a href="/login" title="Đăng Nhập">Đăng Nhập</a></li>
-						<li><a href="/register" title="Đăng Ký">Đăng Ký</a></li>
+						<li>
+							<a href="{{asset('/dang-nhap')}}" 
+								title="Đăng Nhập">Đăng Nhập</a>
+						</li>
+						<li>
+							<a href="{{asset('/dang-ky')}}" 
+								title="Đăng Ký">Đăng Ký</a>
+						</li>
 					</ul>
 				</div>
 				<div class="langauge col-top">
@@ -124,7 +138,7 @@
 			</li>
 			@else
 			<li @if(count($category['children'])>0) class="parent" @endif>
-				<h3><a href="{{asset('/'.$category['pathCt'])}}" 
+				<h3><a href="{{$urlcate.$category['pathCt']}}" 
 					title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
 				</h3>
 				@if(count($category['children'])>0)
@@ -132,7 +146,7 @@
 					@foreach($category['children'] as $subcategory)
 						<li>
 							<h3>
-								<a href="{{$subcategory['pathCt']}}" title="{{$subcategory['titleCt']}}">{{$subcategory['titleCt']}}</a>
+								<a href="{{$urlcate.$subcategory['pathCt']}}" title="{{$subcategory['titleCt']}}">{{$subcategory['titleCt']}}</a>
 							</h3>
 						</li>
 					@endforeach

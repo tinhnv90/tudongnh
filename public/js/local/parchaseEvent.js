@@ -14,6 +14,8 @@ $(document).ready(function(){
         });
 		return jsonData;
 	}
+
+	//sự kiện click menu trên mobile
 	var _domain=window.location.origin+'/tudongnh';
 	$('#nav-bar-mobile>.open-nav-mobile>i').click(function(){
 		if($(this).hasClass('fa-bars')){

@@ -57,42 +57,20 @@
 				<h3 class="bor-b textname">SẢN PHẨM VÀ DỊCH VỤ</h3>
 			</div>
 			<ul class="w100min">
+				@foreach($listCategory as $category)
 				<li>
 					<h3>
 						<i class="fas fa-check"></i>
-						<a href="{{asset('/')}}">TRANG CHỦ</a>
+						@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home')
+							<a href="{{asset('/')}}" 
+								title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
+						@else
+							<a href="{{$urlcate.$category['pathCt']}}" 
+								title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
+						@endif
 					</h3>
 				</li>
-				<li>
-					<h3>
-						<i class="fas fa-check"></i>
-						<a href="#">Tủ Đông Nhà Hàng</a>
-					</h3>
-				</li>
-				<li>
-					<h3>
-						<i class="fas fa-check"></i>
-						<a href="#">Tủ Đông Nhà Hàng</a>
-					</h3>
-				</li>
-				<li>
-					<h3>
-						<i class="fas fa-check"></i>
-						<a href="#">Tủ Đông Nhà Hàng</a>
-					</h3>
-				</li>
-				<li>
-					<h3>
-						<i class="fas fa-check"></i>
-						<a href="#">Tủ Đông Nhà Hàng</a>
-					</h3>
-				</li>
-				<li>
-					<h3>
-						<i class="fas fa-check"></i>
-						<a href="#">Tủ Đông Nhà Hàng</a>
-					</h3>
-				</li>
+				@endforeach
 			</ul>
 		</div>
 		<div id="abouts-us" class="col33">
@@ -111,22 +89,22 @@
 			<ul>
 				<li>
 					<h4>
-						<a href="/gioi-thieu" title="Giới Thiệu">Giới Thiệu</a>
+						<a href="{{asset('/gioi-thieu')}}" title="Giới Thiệu">Giới Thiệu</a>
 					</h4>
 				</li>
 				<li>
 					<h4>
-						<a href="/giao-hang" title="Thông Tin Giao Hàng">Thông Tin Giao Hàng</a>
+						<a href="{{asset('/gio-hang')}}" title="Thông Tin Giao Hàng">Thông Tin Giao Hàng</a>
 					</h4>
 				</li>
 				<li>
 					<h4>
-						<a href="/bao-hanh" title="Chính Sách Bảo Hành">Chính Sách Bảo Hành</a>
+						<a href="{{asset('/bao-hanh')}}" title="Chính Sách Bảo Hành">Chính Sách Bảo Hành</a>
 					</h4>
 				</li>
 				<li>
 					<h4>
-						<a href="/dieu-khoan" title="Chính Sách Và Điều Khoản">Chính Sách Và Điều Khoản</a>
+						<a href="{{asset('/dieu-khoan')}}" title="Chính Sách Và Điều Khoản">Chính Sách Và Điều Khoản</a>
 					</h4>
 				</li>
 			</ul>
@@ -138,22 +116,7 @@
 			<ul>
 				<li>
 					<h4>
-						<a href="/gioi-thieu" title="Giới Thiệu">Giới Thiệu</a>
-					</h4>
-				</li>
-				<li>
-					<h4>
-						<a href="/giao-hang" title="Thông Tin Giao Hàng">Thông Tin Giao Hàng</a>
-					</h4>
-				</li>
-				<li>
-					<h4>
-						<a href="/bao-hanh" title="Chính Sách Bảo Hành">Chính Sách Bảo Hành</a>
-					</h4>
-				</li>
-				<li>
-					<h4>
-						<a href="/dieu-khoan" title="Chính Sách Và Điều Khoản">Chính Sách Và Điều Khoản</a>
+						<a href="{{asset('/gioi-thieu')}}" title="Giới Thiệu">Giới Thiệu</a>
 					</h4>
 				</li>
 			</ul>
@@ -165,7 +128,7 @@
 			<ul>
 				<li>
 					<h4>
-						<a href="/gioi-thieu" title="Giới Thiệu">Sản Phẩm Đặc Biệt</a>
+						<a href="{{$urlpost.'san-pham-dac-biet'}}" title="Sản phẩm đặc biệt">Sản Phẩm Đặc Biệt</a>
 					</h4>
 				</li>
 			</ul>
@@ -177,17 +140,20 @@
 			<ul>
 				<li>
 					<h4>
-						<a href="/gioi-thieu" title="Giới Thiệu">Tài Khoản</a>
+						<a href="{{asset('/tai-khoan')}}" 
+							title="Tài khoản">Tài Khoản</a>
 					</h4>
 				</li>
 				<li>
 					<h4>
-						<a href="/giao-hang" title="Thông Tin Giao Hàng">Lịch Sử Mua Hàng</a>
+						<a href="{{asset('/lich-su-mua-hang')}}" 
+							title="Lịch sử mua hàng">Lịch Sử Mua Hàng</a>
 					</h4>
 				</li>
 				<li>
 					<h4>
-						<a href="/bao-hanh" title="Chính Sách Bảo Hành">Danh Sách Sản Phẩm Ưa Thích</a>
+						<a href="{{asset('/san-pham-ua thich')}}" 
+							title="Danh sách sản phẩm ưa thích">Danh Sách Sản Phẩm Ưa Thích</a>
 					</h4>
 				</li>
 			</ul>
