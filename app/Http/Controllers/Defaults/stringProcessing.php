@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Defaults;
 
 class stringProcessing
 {
-	public static function convert_PathUrl($str){
+	public static function convert_PathUrl($str,$except=','){
 		$str=strtolower($str);
 		$unicode = array( 
 		'a'=>'á|à|ả|ã|ạ|ă|ắ|ặ|ằ|ẳ|ẵ|â|ấ|ầ|ẩ|ẫ|ậ',		 
@@ -29,7 +29,7 @@ class stringProcessing
 		$str=trim($str);
 		$str=strtolower($str);
 		$str = str_replace(['(',')'],['(-','-)'],$str); 
-		$str = str_replace([' ','/',',','----','---','--'],'-',$str); 
+		$str = str_replace([' ','/',$except,'----','---','--'],'-',$str); 
 		return $str; 
 	}
 }

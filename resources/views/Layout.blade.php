@@ -27,6 +27,9 @@
     <meta name="copyright" content="Copyright © 2019 tudongnhahang.com by tinhnv">
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=301735517272841&autoLogAppEvents=1"></script>
+    
     <div id="layout-left" class="hide-mobile"></div>
     <div id="container">
         @include('Common.Header')

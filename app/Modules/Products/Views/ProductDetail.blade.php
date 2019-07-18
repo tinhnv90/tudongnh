@@ -6,14 +6,39 @@
 <link rel="stylesheet" type="text/css" href="{{$style.'product-detail.css'}}">
 @stop
 @section('javascript')
-
+<script src="{{$script.'jquery.zoom.js'}}"></script>
+<script>
+	$(document).ready(function(){
+		$('#images>.zoom').zoom({magnify:2});
+		$('#list-images img').click(function(){
+			$('#images>.zoom img').attr('src',$(this).attr('src'));
+		});
+	});
+</script>
 @stop
 @section('content')
 <div id="content" class="w100min">
 	<div id="product-detail" class="w100min">
 		<div class="left bor-box">
 			<div id="images" class="wh100">
-				
+				<div class="wh100 zoom bor-b" magnify="2">
+					<img src="{{$dir.$infoProduct['get_images']['srcImg']}}" 
+						 alt="{{$infoProduct['get_images']['altImg']}}">
+				</div>
+			</div>
+			<div id="list-images" class="w100min">
+				<ul class="wh100">
+					<li><img src="{{$dir.$infoProduct['get_images']['srcImg']}}"
+						alt="{{$infoProduct['get_images']['altImg']}}"></li>
+					@if(isset($listimages))
+					@foreach($listimages as $moreimg)
+						<li>
+							<img src="{{$dir.$moreimg['srcImg']}}"
+								alt="{{$moreimg['altImg']}}">
+						</li>
+					@endforeach
+					@endif
+				</ul>
 			</div>
 		</div>
 		<div class="content">
@@ -62,9 +87,10 @@
 					data-id="{{$infoProduct['idproduct']}}">
 					<div class="col35 number">
 						<p>Số Lượng :</p>
-						<input type="text" name="productNumber" value="1">
+						<input type="text" class="productNumber" value="1">
 					</div>
-					<div class="col50 cart">
+					<div class="col50 cart" 
+						data-idproduct="{{$infoProduct['idproduct']}}">
 						@if(Session::has('productInTheCart') && Session::has('productInTheCart.'.$infoProduct['idproduct']))
 							<h4 class="add-cart bor-box bkg-addcart" 
 								data-price="{{$infoProduct['get_detail']['price']}}">Hủy</h4>
@@ -92,11 +118,32 @@
 						</span>
 					</div>
 				</div>
+				<div id="social-network" class="w100min">
+					<div class="fb-like" data-href="{{url()->current()}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+				</div>
+				<ul id="tags" class="w100min">
+					<li class="first">
+						<h3>Tags : </h3>
+					</li>
+					@if(isset($listTags))
+					@foreach($listTags as $key=>$tags)
+					<li>
+						@if($key>0)<span>|</span>@endif
+						<a href="{{asset('/search/'.$tags)}}" 
+							title="{{$tags}}">{{$listTags_text[$key]}}</a>
+					</li>
+					@endforeach
+					@endif
+				</ul>
 			</div>
 		</div>
 	</div>
 	<div id="product-content" class="w100min">
-		
+		<div class="title-page">
+			<h3>
+				<span></span>
+			</h3>
+		</div>
 	</div>
 </div>
 @stop

@@ -19,6 +19,9 @@ class tblproduct extends Model
     public function getImages(){
     	return $this->belongsTo(tblimage::class,'idImg');
     }
+    public function getmoreImages(){
+        return [1,2,3,4,5,6];
+    }
     public function getSeo(){
         return $this->hasOne(tblseo::class,'idproduct');
     }

@@ -3,11 +3,13 @@ namespace App\Modules\Products\Controllers;
 
 use App\Model\tblhtml;
 use App\Model\tblpost;
+use App\Model\tblimage;
 use App\Model\tblbanner;
 use App\Model\tblproduct;
 use App\Model\tblcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Defaults\stringProcessing;
 
 
 class ProductsController extends Controller{
@@ -37,11 +39,31 @@ class ProductsController extends Controller{
         }
     }
     public function ProductDetail(Request $request,$pathPro){
+        //product infomation
         $infoProduct=tblproduct::query()
             ->with('getImages','getDetail','getSeo')
             ->where('pathPro',$pathPro)
             ->first()->toArray();
         $this->data['infoProduct']=$infoProduct;
+
+        //danh sách ảnh kèm theo
+        $listimages=[];
+        if($infoProduct['moreImg']!=''){
+            $listidImg=explode(',', $infoProduct['moreImg']);
+            $listimages=tblimage::whereIn('idImg',$listidImg)->get()->toArray();
+            $this->data['listimages']=$listimages;
+            unset($listimages);unset($listidImg);
+        }
+
+        //danh sách thẻ tag sản phẩm
+        $listTags=[];
+        if($infoProduct['get_seo']['tags']!=''){
+            $tags=stringProcessing::convert_PathUrl($infoProduct['get_seo']['tags'],'');
+            $listTags=explode(',', $tags);
+            $this->data['listTags']=$listTags;
+            $this->data['listTags_text']=explode(',', $infoProduct['get_seo']['tags']);
+            unset($listTags);unset($tags);
+        }
         return view('Products::ProductDetail',$this->data);
     }
 }

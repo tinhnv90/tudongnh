@@ -152,8 +152,10 @@ class BaseAdminController extends Controller
         }
         try{
             menuProcessing::menuinsert($request);
+            $idcategory=tblcategory::orderBy('idcategory','DESC')
+                ->first()->toArray()['idcategory'];
             tblhtml::insert([
-                'descript'=>$request->txtName_category,
+                'descript'=>$idcategory,
                 'properties'=>$request->pathCt,
                 'value'=>$request->contentCategory
             ]);
@@ -169,7 +171,6 @@ class BaseAdminController extends Controller
         return view('admins.menuedit',$this->data);
     }
     public function post_menuedit(Request $request,$idcategory,$_tonken){
-
         $rules=menuProcessing::getRules(false);
         $messages=menuProcessing::getMessages(false);
         $validator=Validator::make($request->all(),$rules,$messages);
@@ -178,19 +179,20 @@ class BaseAdminController extends Controller
                 menuProcessing::datashow_menuedit($idcategory,$_tonken));
             return View('admins.menuedit',$this->data)->withErrors($validator);
         }
+        
         if($request->_tonken==$_tonken){
             menuProcessing::menuedit($request,$idcategory);
 
-            $contentCategory=tblhtml::where('properties',$request->pathCt)
+            $contentCategory=tblhtml::where('descript',$idcategory)
                 ->first();
             if($contentCategory != null){
                 $tblhtml=tblhtml::find($contentCategory->toArray()['idhtml']);
-                $tblhtml->descript=$request->txtName_category;
+                $tblhtml->properties=$request->pathCt;
                 $tblhtml->value=$request->contentCategory;
                 $tblhtml->save();
             }else{
                 tblhtml::insert([
-                    'descript'=>$request->txtName_category,
+                    'descript'=>$idcategory,
                     'properties'=>$request->pathCt,
                     'value'=>$request->contentCategory
                 ]);
@@ -212,7 +214,7 @@ class BaseAdminController extends Controller
         $pathCt=stringProcessing::convert_PathUrl($this->data['namecategory']);
         $this->data['countproduct']=tblcategory::
             where(['typeCt'=>'product','statusCt'=>1,['pathCt','like','%'.$pathCt.'%']])
-            ->count();
+            ->count();    
         //end page
         $this->data['offset']=($this->data['page']-1)*$this->data['productNumberDisplayed'];
         $this->data['take']=$this->data['productNumberDisplayed'];

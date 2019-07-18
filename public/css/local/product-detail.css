@@ -1,13 +1,13 @@
 #product-detail>.left{
 	width: calc(40% - 42px);
-	height: 378px;
+	height: 481px;
 	padding: 10px;
 	margin-right: 20px;
 	float: left;
 }
 #product-detail>.content{
 	width: calc(60% - 50px);
-	height: 400px;
+	min-height: 400px;
 	float: left;
 	margin-left: 50px;
 }
@@ -17,6 +17,8 @@
 }
 #information>.title-page span{
 	background: unset;
+    height: unset;
+    padding-bottom: 15px;
 }
 #information>.product-rating{
 	height: 30px;
@@ -101,4 +103,51 @@
     height: calc(100% - 6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     margin-left: 15px;
+}
+#social-network{
+	height: 30px;
+	padding: 10px 0px;
+}
+#tags{
+	padding-left: unset;
+    margin: unset;
+}
+#tags>li{
+	height: 25px;
+	padding: 0px 5px;
+	float: left;
+}
+#tags>li>span{
+	padding-right: 5px;
+}
+#images{
+	height: calc(100% - 80px);
+	text-align: center;
+}
+#images>div{
+	height: calc(100% - 20px);
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+#images>.zoom>img{
+    height: 100%;
+	width: auto;
+}
+#list-images{
+	height: 80px;
+}
+#list-images>ul{
+	margin: unset;
+	padding-left: unset;
+}
+#list-images>ul>li{
+	margin-left: 10px;
+}
+#list-images>ul>li,#list-images>ul>li>img{
+	height: 100%;
+	width: 72px;
+	float: left;
+}
+#list-images>ul>li>img:hover{
+	cursor: pointer;
 }

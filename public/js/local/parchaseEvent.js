@@ -43,10 +43,12 @@ $(document).ready(function(){
 			$('.cart-item').text(++numitem);
 		}
 		$('.cart-item').attr('data-cart',numitem);
-
+		var productNumber=1;
+		if($('.productNumber').length>0)
+			productNumber=$('.productNumber').val();
 		//ajax post: add product in ther cart
 		var urlrequest=_domain+'/add-cart';
-		var json_parementer={idproduct : idproduct, numitem:numitem};
+		var json_parementer={idproduct : idproduct, productNumber:productNumber};
         var dataResult=postAjax(urlrequest,json_parementer);
 	});
 

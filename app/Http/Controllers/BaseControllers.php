@@ -16,7 +16,7 @@ class BaseControllers extends Controller
                 $request->session()->forget('productInTheCart');
         	$result='Đã Hủy Chọn Hàng';
         }else{
-            $request->session()->push('productInTheCart.'.$request->idproduct,$request->numitem);
+            $request->session()->push('productInTheCart.'.$request->idproduct,$request->productNumber);
             $result='Đã Chọn Hàng';
         }
         return response()->json(['result'=>$result]);
