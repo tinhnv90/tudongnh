@@ -21,7 +21,7 @@
 				<div class="content w100min">
 					<h3 class="name w100min">
 						<a href="{{$urlpro.$products['pathPro']}}" 
-							title="{{$products['namePro']}}">{{$products['namePro']}}</a>
+							title="{{$products['namePro']}}">{{$products['namePro'].' - '.$products['idproduct']}}</a>
 					</h3>
 					<div class="detail w100min">
 						@if($products['get_detail']['price']==0)
