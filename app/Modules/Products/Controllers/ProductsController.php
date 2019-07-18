@@ -36,13 +36,13 @@ class ProductsController extends Controller{
             $this->data['productNumberInTheWishlist']=count($request->session()->get('productInTheWishlist'));
         }
     }
-    public function detailProduct(Request $request,$pathPro){
+    public function ProductDetail(Request $request,$pathPro){
         $infoProduct=tblproduct::query()
             ->with('getImages','getDetail','getSeo')
             ->where('pathPro',$pathPro)
             ->first()->toArray();
         $this->data['infoProduct']=$infoProduct;
-        return view('Products::detailProduct',$this->data);
+        return view('Products::ProductDetail',$this->data);
     }
 }
 
