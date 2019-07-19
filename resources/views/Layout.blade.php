@@ -16,6 +16,7 @@
     <meta property="og:site_name" content="@yield('title')"/>
     <meta property="fb:pages" content="137693146948818">
     <meta property="ia:markup_url" content="{{url()->current()}}">
+    @yield('meta-face')
 
     <link rel="stylesheet" type="text/css" href="{{$style.'Stylesheet.css'}}">
     <link rel="stylesheet" type="text/css" href="{{$style.'mobile.css'}}">
@@ -37,5 +38,12 @@
         @include('Common.Footer')
     </div>
     <div id="layout-right" class="hide-mobile"></div>
+    <div id="zoom-images" class="hidden">
+        <div class="war-images bor-box">
+            <p class="exit-war">x</p>
+            <img src="http://localhost/tudongnh/public/images/san-pham/bep-tu-cong-nghiep/bep-tu-cong-nghiep-3kw/bep-tu-cong-nghiep-wailaan-whc-3k.jpg" 
+            alt="alt img">
+        </div>
+    </div>
 </body>
 </html>

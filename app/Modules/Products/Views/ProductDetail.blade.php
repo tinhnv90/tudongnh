@@ -16,6 +16,13 @@
 	});
 </script>
 @stop
+@section('meta-face')
+<meta property="og:image"       
+	content="{{$dir.$infoProduct['get_images']['srcImg']}}" />
+<meta property="og:image:alt" content="{{$infoProduct['get_images']['altImg']}}"/>
+<meta property="og:image:width" content="500px"/>
+<meta property="og:image:height" content="554px"/>
+@stop
 @section('content')
 <div id="content" class="w100min">
 	<div id="product-detail" class="w100min">
@@ -141,8 +148,36 @@
 	<div id="product-content" class="w100min">
 		<div class="title-page">
 			<h3>
-				<span></span>
+				<span>MÔ TẢ SẢN PHẨM</span>
 			</h3>
+		</div>
+		<div class="container">
+			<?php echo $infoProduct['contentPro']; ?>
+		</div>
+		<div class="related-product w100min">
+			<div class="title-page">
+				<h3>
+					<span>SẢN PHẨM LIÊN QUAN</span>
+				</h3>
+			</div>
+			<?php $numberColumn=6;$listproducts=$listRelatedProduct ?>
+			@include('Products::ListProducts')
+		</div>
+	</div>
+	<div id="comment" class="w100min">
+		<div class="title-page">
+			<h3>
+				<span>BÌNH LUẬN</span>
+			</h3>
+		</div>
+		<div class="content w100min">
+			<div class="war-comment">
+				<div class="fb-comments" 
+					data-href="{{url()->current()}}" 
+					data-width="100%" 
+					data-numposts="5">
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

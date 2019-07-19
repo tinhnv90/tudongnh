@@ -1,0 +1,71 @@
+.shortDescription{
+    width: calc(100% - 10px);
+    padding: 10px 0px 20px 10px;
+    font-style: oblique;
+    font-family: cursive;
+    font-size: 17px;
+}
+.container{
+	width: calc(100% - 10px);
+    padding-left: 10px;
+    margin-top: 20px;
+}
+#content>.title-page{
+	background: rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+#content>.content{
+    width: calc(100% - 100px);
+    margin: 0px auto;
+    min-height: 10px;
+}
+#content>.title-page p{
+    min-width: 10px;
+    height: 100%;
+    float: left;
+    margin: 0px;
+    padding: 15px 10px 0px 20px;
+	background: unset;
+    font-weight: normal;
+    font-size: 15px;
+    font-style: italic;
+}
+#content .date-time{
+    margin-left: 5px;
+}
+#content .author{
+	margin-right: 10px;
+}
+#content>.title-page>h3>span,
+#recommend>.title-page>h3>span,
+#comment>.title-page>h3>span{
+    padding-top: 10px;
+    height: 30px;
+    margin: 7px 0px;
+}
+#recommend{
+	margin-top: 30PX;
+}
+#recommend>.title-page{
+    background: rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+#recommend>.scoll>ul>li{
+	margin-bottom: 20px;
+}
+#comment>.title-page{
+    background: rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+#comment .war-comment{
+	width: 900px;
+	min-height: 10px;
+	padding-bottom: 20px;
+	margin: 0px auto;
+}
+#content .quote>h3{
+	text-align: right;
+}
+#content .quote>h3>span{
+    margin-right: 50px;
+}

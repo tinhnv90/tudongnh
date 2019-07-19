@@ -15,7 +15,7 @@
 				</div>
 				<div class="content w100min">
 					<h3 class="name w100min">
-						<a href="{{$urlpost.$posts['pathPost']}}" 
+						<a class="wh100" href="{{$urlpost.$posts['pathPost']}}" 
 							title="{{$posts['titlePost']}}">{{$posts['titlePost']}}</a>
 					</h3>
 					<div class="short-description w100min">

@@ -10,18 +10,18 @@ $(document).ready(function(){
     setInterval(function(){
 		$("#product-mostview>.scoll ul li:first-child").
 			animate({marginLeft:'-'+$(this).width()},2000,function(){
-				$('#product-mostview>.scoll ul li').css({'display':'block','z-index':9});
-	        $(this).css({'margin':'0px','display':'none','z-index':1})
+				$('#product-mostview>.scoll ul li').css({'display':'block'});
+	        $(this).css({'margin':'unset','display':'none'})
                 .appendTo('#product-mostview>.scoll ul');
 	    });
     },2000);
 
     setInterval(function(){
-        $("#post>.scoll ul li:first-child").
+        $("#posts>.scoll ul li:first-child").
             animate({marginLeft:'-'+$(this).width()},2000,function(){
-                $('#post>.scoll ul li').css({'display':'block','z-index':9});
-            $(this).css({'margin':'0px','display':'none','z-index':1})
-                .appendTo('#post>.scoll ul');
+                $('#posts>.scoll ul li').css({'display':'block'});
+            $(this).css({'margin':'unset','display':'none'})
+                .appendTo('#posts>.scoll ul');
         });
     },2000);
 

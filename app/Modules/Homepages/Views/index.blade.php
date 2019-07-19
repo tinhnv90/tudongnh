@@ -71,7 +71,8 @@
 		</div>
 		<div class="container">
 			@include('Homepages::container.war-banner')
-			@include('products.category')
+			<?php $listproducts=$listProductOfCategory['listproduct'];$numberColumn=4; ?>
+			@include('Products::category')
 		</div>
 	</div>
 	<div id="post-mostview" class="w100min">

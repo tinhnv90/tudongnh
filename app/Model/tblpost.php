@@ -16,6 +16,9 @@ class tblpost extends Model
     public function getImages(){
     	return $this->belongsTo(tblimage::class,'idImg');
     }
+    public function getUser(){
+        return $this->belongsTo(\App\User::class,'id');
+    }
     public function getSeo(){
         return $this->hasOne(tblseo::class,'idproduct');
     }

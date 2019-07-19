@@ -92,4 +92,14 @@ $(document).ready(function(){
 		var json_parementer={idproduct : idproduct};
         var dataResult=postAjax(urlrequest,json_parementer);
 	});
+
+	//thoát ảnh phóng to giữa màn hình
+	$('.exit-war').click(function(){
+		$('#zoom-images').addClass('hidden');
+	});
+	$('.zoom-out').click(function(){
+		var srcimg=$(this).attr('data-src');
+		$('#zoom-images').removeClass('hidden');
+		$('#zoom-images img').attr('src',srcimg);
+	});
 });

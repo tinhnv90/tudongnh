@@ -151,3 +151,42 @@
 #list-images>ul>li>img:hover{
 	cursor: pointer;
 }
+/*container*/
+#product-content>.title-page{
+	background: rgba(255, 255, 255, 0.2);
+	padding-bottom: 5px;
+}
+#product-content>.container{
+	padding: 10px;
+	width: calc(100% - 20px);
+	min-height: 300px;
+	float: left;
+}
+.related-product{
+	background: rgba(255, 255, 255, 0.2);
+    margin-top: 35px;
+}
+.related-product>.title-page{
+	padding-top: unset;
+}
+.related-product>.title-page>h3>span,#comment>.title-page>h3>span{
+	width: calc(100% - 20px);
+}
+.related-product>.scoll>ul>li{
+	margin-bottom: 20px;
+}
+
+/*-----bình luận sản phẩm------*/
+#comment{
+	margin-top: 20px;
+	min-height: 285px;
+}
+#comment>.content>.war-comment{
+	width: 900px;
+	min-height: 10px;
+	margin: 0px auto;
+	background: #fff;
+}
+#comment>.content{
+	padding-bottom: 30px;
+}

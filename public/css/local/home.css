@@ -115,6 +115,7 @@
 }
 #post .short-description>p{
     font-size: 17px;
+    height: 138px;
 }
 #post .scoll{
     overflow: hidden;
@@ -144,6 +145,9 @@
     }
     #product-mostview .col-pro6{
         width: 176.66px;
+    }
+    #product-mostview>.scoll>ul>.col-pro6,#post>.scoll>ul>.col-pro5{
+        margin-right: 24px !important;
     }
 }
 @media(max-width: 767px){

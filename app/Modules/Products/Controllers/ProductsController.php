@@ -64,6 +64,15 @@ class ProductsController extends Controller{
             $this->data['listTags_text']=explode(',', $infoProduct['get_seo']['tags']);
             unset($listTags);unset($tags);
         }
+
+        //danh sách sản phẩm liên quan
+        $listRelatedProduct=tblproduct::query()
+            ->with('getImages','getDetail','getSeo')
+            ->where(['idcategory'=>$infoProduct['idcategory'],
+                    ['idproduct','<>',$infoProduct['idproduct']]])
+            ->orderBy('numview','DESC')
+            ->limit(12)->get()->toArray();
+        $this->data['listRelatedProduct']=$listRelatedProduct;
         return view('Products::ProductDetail',$this->data);
     }
 }
