@@ -1,5 +1,5 @@
 <div class="scoll">
-	<ul>
+	<ul><?php if(!isset($numberColumn)) $numberColumn=6; ?>
 	@foreach($listproducts as $key=>$products)
 		<li class="col-pro{{$numberColumn}} @if(++$key % $numberColumn==0)unmar-right @endif">
 			<div class="images w100min">

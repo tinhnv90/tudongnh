@@ -1,3 +1,15 @@
+#conten-right{
+    width: calc(75% - 12px);
+    min-height: 10px;
+    float: right;
+    margin-left: 10px;
+}
+#left{
+    width: calc(25% - 12px);
+    margin-right: 10px;
+    min-height: 10px;
+    float: right;
+}
 .shortDescription{
     width: calc(100% - 10px);
     padding: 10px 0px 20px 10px;
@@ -10,16 +22,11 @@
     padding-left: 10px;
     margin-top: 20px;
 }
-#content>.title-page{
+#conten-right>.title-page{
 	background: rgba(255, 255, 255, 0.2);
     padding-bottom: 5px;
 }
-#content>.content{
-    width: calc(100% - 100px);
-    margin: 0px auto;
-    min-height: 10px;
-}
-#content>.title-page p{
+#conten-right>.title-page p{
     min-width: 10px;
     height: 100%;
     float: left;
@@ -30,13 +37,13 @@
     font-size: 15px;
     font-style: italic;
 }
-#content .date-time{
+#conten-right .date-time{
     margin-left: 5px;
 }
-#content .author{
+#conten-right .author{
 	margin-right: 10px;
 }
-#content>.title-page>h3>span,
+#conten-right>.title-page>h3>span,
 #recommend>.title-page>h3>span,
 #comment>.title-page>h3>span{
     padding-top: 10px;
@@ -62,6 +69,7 @@
 	min-height: 10px;
 	padding-bottom: 20px;
 	margin: 0px auto;
+    background: #fff;
 }
 #content .quote>h3{
 	text-align: right;

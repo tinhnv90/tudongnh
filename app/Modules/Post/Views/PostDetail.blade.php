@@ -4,6 +4,7 @@
 @section('keywords'){{$postdetail['get_seo']['keyword']}}@stop
 @section('stylesheet')
 <link rel="stylesheet" type="text/css" href="{{$style.'post-detail.css'}}">
+<link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
 @section('meta-face')
 <meta property="og:image"       
@@ -14,16 +15,16 @@
 @stop
 @section('content')
 <div id="content">
-	<div class="title-page">
-		<h3>
-			<span>{{$postdetail['titlePost']}}</span>
-			<p>
-				<span class="author">{{$postdetail['get_user']['name']}}</span>|
-				<span class="date-time">{{$postdetail['created_at']}}</span>
-			</p>
-		</h3>
-	</div>
-	<div class="content">
+	<div id="conten-right">
+		<div class="title-page">
+			<h3>
+				<span>{{$postdetail['titlePost']}}</span>
+				<p>
+					<span class="author">{{$postdetail['get_user']['name']}}</span>|
+					<span class="date-time">{{$postdetail['created_at']}}</span>
+				</p>
+			</h3>
+		</div>
 		<div class="shortDescription w100min">
 			<?php echo $postdetail['shortDescription']; ?>
 		</div>
@@ -34,13 +35,18 @@
 			<h3>Trích Dẫn: <span>{{$postdetail['quote']}}</span></h3>
 		</div>
 	</div>
+	<div id="left" class="bor-box">
+		@include('left.category')
+		@include('left.category')
+		@include('left.category')
+	</div>
 	<div id="recommend" class="w100min">
 		<div class="title-page">
 			<h3>
 				<span>SẢN PHẨM LIÊN QUAN</span>
 			</h3>
 		</div>
-		@include('Products::ListProducts')
+		@include('Product.ListProducts')
 	</div>
 	<div id="comment" class="w100min">
 		<div class="title-page">

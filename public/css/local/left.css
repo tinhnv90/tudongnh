@@ -58,3 +58,22 @@
         width: 100%;
     }
 }
+
+/*------------#category left--------------*/
+#left>div{
+    margin-bottom: 20px;
+}
+#left>div>.title-page{
+    background: rgba(255, 255, 255, 0.2);
+}
+#left>div>.title-page>h3{
+    padding: 5px 0px 10px;
+    text-align: center;
+}
+#category-left>ul{
+    padding-left: 10px;
+    width: calc(100% - 10px);
+}
+#category-left>ul>li:hover{
+    text-decoration: underline;
+}

@@ -7,5 +7,6 @@
 			</span>
 		</h3>
 	</div>
-	@include('Products::ListProducts')
+	<?php $listproducts=$listProductOfCategory['listproduct']; ?>
+	@include('Product.ListProducts')
 </div>

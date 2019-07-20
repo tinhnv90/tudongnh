@@ -38,7 +38,7 @@ class ProductsController extends Controller{
             $this->data['productNumberInTheWishlist']=count($request->session()->get('productInTheWishlist'));
         }
     }
-    public function ProductDetail(Request $request,$pathPro){
+    public function ProductDetail($pathPro){
         //product infomation
         $infoProduct=tblproduct::query()
             ->with('getImages','getDetail','getSeo')
@@ -72,8 +72,24 @@ class ProductsController extends Controller{
                     ['idproduct','<>',$infoProduct['idproduct']]])
             ->orderBy('numview','DESC')
             ->limit(12)->get()->toArray();
-        $this->data['listRelatedProduct']=$listRelatedProduct;
+        $this->data['listproducts']=$listRelatedProduct;
         return view('Products::ProductDetail',$this->data);
+    }
+
+    public function category($pathCt){
+        //danh sách sản phẩm
+        $listproduct=tblcategory::query()
+            ->with(['listproduct'=>function($query){
+                $query->with('getImages','getDetail')
+                    ->orderBy('numview','DESC')->limit(8);
+            }])->where('pathCt',$pathCt)
+            ->first()->toArray();
+        $this->data['listProductOfCategory']=$listproduct;
+        $this->data['numberColumn']=6;
+        //end
+
+        
+        return view('Products.Category',$this->data);
     }
 }
 

@@ -23,10 +23,12 @@ body{
 h3{margin: unset;}
 .mb,.hidden{display: none;}
 .hide-mobile{display: block;}
+.col65{width: 65%;height: 100%;float: left;}
 .col50{width: 50%;height: 100%;float: left;}
 .col20{width: 20%;height: 100%;float: left;}
 .col25{width: 25%;height: 100%;float: left;}
 .col33{width: 33.33333%;height: 100%;float: left;}
+.col35{width: 35%;height: 100%;float: left;}
 .bor-t{border-top: 1px solid rgba(255, 255, 255, 0.2);}
 .bor-b{border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
 .bor-box{border: 1px solid rgba(255, 255, 255, 0.2);}
@@ -34,6 +36,12 @@ h3{margin: unset;}
 .wh100{width: 100%;height: 100%;float: left;}
 .bkg-addcart{background: #aeccd4;}
 .color-active{color: #aeccd4 !important;}
+.scroll-x{
+    overflow-x: scroll !important;
+}
+.scroll-y{
+    overflow-y: scroll !important;
+}
 .title-page{
 	width: 100%;
 	min-height: 10px;

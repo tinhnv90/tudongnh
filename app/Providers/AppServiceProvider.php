@@ -29,6 +29,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
+        //menu danh mục
+        View::share(
+            'listCategory',tblcategory::query()
+                ->with('children','children.children')
+                ->where(['leveCt'=>0,'statusCt'=>1])
+                ->orderBy('orderCt')
+                ->get()
+                ->toArray()
+        );
+        
         if(tblimage::where('pathImg','error-images.png')->count()==0){
             tblimage::insert([
                 'altImg'=>'error-images',
@@ -56,16 +66,6 @@ class AppServiceProvider extends ServiceProvider
             ->whereRaw('idImg not in (select idImg from tblimages)')
             ->update(['idImg'=>$idImgErorr]);
         unset($idImgErorr);
-
-        //menu danh mục
-        View::share(
-            'listCategory',tblcategory::query()
-                ->with('children','children.children')
-                ->where(['leveCt'=>0,'statusCt'=>1])
-                ->orderBy('orderCt')
-                ->get()
-                ->toArray()
-        );
 
         //****************info web**********************************
         if(tblinfoweb::all()->toArray()==null){
