@@ -42,8 +42,8 @@
 				@foreach($listCategory as $category)
 				<li class="w100min">
 					<h3>
-						@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home')
-							<a class="nametext" href="{{asset('/')}}" 
+						@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home' || $category['pathCt']=='tin-tuc')
+							<a class="nametext" href="{{asset('/'.str_replace(['trang-chu','home'],'',$category['pathCt']))}}" 
 								title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
 						@else
 							<a class="nametext" href="{{$urlcate.$category['pathCt']}}" 
@@ -130,9 +130,9 @@
 	<div id="menu" class="hide-mobile w100min">
 		<ul class="nav-bar">
 			@foreach($listCategory as $category)
-			@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home')
+			@if($category['pathCt']=='trang-chu' || $category['pathCt']=='home' || $category['pathCt']=='tin-tuc')
 			<li>
-				<h3><a href="{{asset('/')}}" 
+				<h3><a href="{{asset('/'.str_replace(['trang-chu','home'],'',$category['pathCt']))}}" 
 					title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
 				</h3>
 			</li>

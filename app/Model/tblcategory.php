@@ -22,10 +22,13 @@ class tblcategory extends Model
     public function listproduct(){
     	return $this->hasMany(tblproduct::class,'idcategory');
     }
-    public function imagescategory(){
+    public function listpost(){
+        return $this->hasMany(tblpost::class,'idcategory');
+    }
+    public function getImages(){
         return $this->belongsTo(tblimage::class,'idImg');
     }
-    public function seocategory(){
-        return $this->hasOne(tblseo::class,'idImg');
+    public function getSeo(){
+        return $this->hasOne(tblseo::class,'idcategory');
     }
 }

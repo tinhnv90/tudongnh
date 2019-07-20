@@ -52,6 +52,18 @@ class PostController extends Controller{
         $this->data['numberColumn']=6;
         return view('Post::PostDetail',$this->data);
     }
+
+    public function category(Request $request){
+        $listpost=tblcategory::query()
+            ->with(['listpost'=>function($query){
+                $query->with('getImages');
+            }])
+            ->with('getImages','getSeo')
+            ->where('pathCt','tin-tuc')->orWhere('pathCt','post')
+            ->first()->toArray();
+        $this->data['listpost']=$listpost;
+        return view('Post::category',$this->data);
+    }
 }
 
 ?>

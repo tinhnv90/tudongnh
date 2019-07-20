@@ -22,4 +22,7 @@ class tblpost extends Model
     public function getSeo(){
         return $this->hasOne(tblseo::class,'idproduct');
     }
+    public function getCategory(){
+        return $this->belongsTo(tblcategory::class,'idcategory');
+    }
 }

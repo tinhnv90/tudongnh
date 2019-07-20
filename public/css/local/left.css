@@ -63,6 +63,9 @@
 #left>div{
     margin-bottom: 20px;
 }
+#left>div:last-child{
+    margin-bottom: unset;
+}
 #left>div>.title-page{
     background: rgba(255, 255, 255, 0.2);
 }
@@ -74,6 +77,65 @@
     padding-left: 10px;
     width: calc(100% - 10px);
 }
-#category-left>ul>li:hover{
+#category-left h3>a:hover{
     text-decoration: underline;
+}
+#category-left .parent>ul{
+    display: none;
+    padding-left: 10px;
+    position: absolute;
+    left: calc(25% + -2px);
+    background: rgb(158, 132, 136);
+    top: 395px;
+    min-height: 360px;
+    z-index: 9;
+}
+#category-left .parent:hover ul{
+    display: block;
+}
+#category-left ul>li{
+    padding-bottom: 5px;
+}
+/*-------box-face--------*/
+.facebook-plugin{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/*-------special-product-------*/
+#special-product{
+    max-height: 845px;
+    overflow: hidden;
+}
+#special-product>.war-special{
+    max-height: 800px;
+    overflow: hidden;
+}
+#special-product>.war-special>ul{
+    padding-left: unset;
+    margin: unset;
+}
+#special-product>.war-special>ul>li{
+    margin: 5px 0px;
+    height: 147px;
+    background: rgba(255, 255, 255, 0.2);
+}
+#special-product .images{
+    width: 120px;
+    height: 100%;
+    float: right;
+}
+#special-product .content{
+    width: calc(100% - 130px);
+    height: 100%;
+    float: right;
+    margin-left: 10px;
+}
+#special-product .content>h3{
+    height: calc(100% - 50px);
+    overflow: hidden;
+}
+#special-product .content>h4,#special-product .content>.rating{
+    margin: unset;
+    height: 25px;
 }

@@ -127,6 +127,9 @@
     width: 220px;
 }
 @media(min-width: 767px){
+    div[id^="product-list-by-category"] .col-pro4{
+        width: 209.5px;
+    }
     #post .scoll{
         height: 480px;
     }

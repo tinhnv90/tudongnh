@@ -1,0 +1,62 @@
+#left{
+	width: calc(25% - 17px);
+	min-height: 10px;
+	float: right;
+	margin-right: 15px;
+}
+/*--content right post--*/
+
+/*--content right product--*/
+#content-right{
+	width: calc(75% - 15px);
+	min-height: 10px;
+	float: right;
+	margin-left: 15px;
+}
+#filter{
+	padding: 20px 0px;
+	height: 30px;
+}
+#filter select{
+	height: 25px;
+	min-width: 150px;
+}
+/*--page--*/
+#page{
+	height: 40px;
+}
+#page>ul{
+	margin: 0px auto;
+	padding-left: unset;
+	width: auto;
+	height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+#page>ul>li{
+    width: 38px;
+    height: calc(100% - 2px);
+    float: left;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    margin-right: 5px;
+}
+#page p{
+	margin: 0px;
+    height: calc(100% - 6px);
+    padding-top: 6px;
+    font-size: 19px;
+}
+#page p:hover{
+	text-decoration: underline;
+	font-weight: bold;
+	background: rgba(255, 255, 255, 0.2);
+}
+#page .active-page{
+	text-decoration: underline;
+	font-weight: bold;
+	background: rgb(158, 132, 136);
+}
+.sort-product{
+	text-align: center;
+}

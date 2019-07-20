@@ -25,4 +25,7 @@ class tblproduct extends Model
     public function getSeo(){
         return $this->hasOne(tblseo::class,'idproduct');
     }
+    public function getParent(){
+        return $this->belongsTo(tblcategory::class,'idcategory');
+    }
 }

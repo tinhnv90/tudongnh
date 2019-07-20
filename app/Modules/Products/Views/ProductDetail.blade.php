@@ -161,6 +161,8 @@
 		</div>
 	</div>
 	<div id="left" class="bor-box">
+		<?php $idcategory=$infoProduct['idcategory'];
+		$idparent=$listproducts[0]['get_parent']['leveCt']; ?>
 		@include('left.category')
 		@include('left.category')
 		@include('left.category')

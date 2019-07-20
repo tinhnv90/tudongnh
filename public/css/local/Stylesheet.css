@@ -36,6 +36,7 @@ h3{margin: unset;}
 .wh100{width: 100%;height: 100%;float: left;}
 .bkg-addcart{background: #aeccd4;}
 .color-active{color: #aeccd4 !important;}
+.active-nav{text-decoration: underline;}
 .scroll-x{
     overflow-x: scroll !important;
 }
@@ -403,9 +404,6 @@ h3{margin: unset;}
     .unmar-right{margin-right: unset !important;}
     div[id^="product-list-by-category"]>.scoll>ul>li{
         margin-bottom: 25px;
-    }
-    div[id^="product-list-by-category"] .col-pro4{
-        width: 209.5px;
     }
     .col-pro6{
         height: calc(100% - 20px);

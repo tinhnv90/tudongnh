@@ -4,7 +4,7 @@ $sumPage=$countproduct/$productNumberDisplayed;
 if($sumPage>(int)$sumPage)
 	$sumPage=(int)(++$sumPage);
 ?>
-<div id="page">
+<div id="page" class="w100min">
 	<ul>
 		@if($page>3)
 		<li>
@@ -34,7 +34,7 @@ if($sumPage>(int)$sumPage)
 		@endif
 		<li>
 			<a href="{{$urlpage}}&page={{$page}}">
-				<p class="activepage">{{$page}}</p>
+				<p class="active-page">{{$page}}</p>
 			</a>
 		</li>
 		@if($page+1<=$sumPage)
