@@ -1,0 +1,93 @@
+#conten-right{
+    width: calc(75% - 20px);
+    margin-left: 20px;
+    min-height: 10px;
+    float: right;
+}
+#left{
+    width: calc(25% - 2px);
+    min-height: 10px;
+    float: right;
+}
+#conten-right>.title-page>h3{
+	background: rgba(255, 255, 255, 0.2);
+}
+.container>.title-table>div{
+	height: 25px;
+	padding: 10px 0px;	
+}
+.container>.title-table>div,.container>ul>li>div{
+	float: left;
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	text-align: center;
+}
+.container>.title-table p{
+	margin: unset;
+}
+.col-index{
+	width: 50px;
+}
+.col-images{
+	width: 130px;
+}
+.col-product{
+	width: calc(100% - 492px);
+}
+.col-number,.col-price,.col-action{
+	width: 100px;
+}
+.container>ul{
+	padding-left: unset;
+	margin: unset;
+}
+.container>ul>li{
+	height: 130px;
+}
+.container>ul>li>div{
+	height: 100%;
+}
+.container img{
+    padding: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    float: left;
+}
+.container li>div>p{
+	margin-top: 50px;
+	font-size: 17px;
+}
+.container h3{
+	height: calc(100% - 70px);
+    overflow: hidden;
+    padding-top: 10px;
+}
+.container h4{
+	margin: unset;
+	height: 25px;
+    font-size: 17px;
+}
+.container h4>span{
+	font-weight: bold;
+}
+.detail-product{
+	margin-top: 5px;
+}
+.detail-product>p{
+	margin: unset;
+	height: 25px;
+	min-width: 10px;
+	padding: 0px 10px;
+	float: left;
+	font-size: 17px;
+}
+.detail-product>p>span{
+	margin-left: 5px;
+}
+.remove-cart{
+    background: red;
+    width: 50px;
+    margin: 0px auto;
+    border-radius: 5px;
+    font-weight: bold;
+}

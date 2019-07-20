@@ -16,7 +16,7 @@
 }
 #slideshow>ul{
     padding-left: unset;
-    height: 400px;
+    height: 100%;
     margin: 0px;
     overflow: hidden;
 }
@@ -133,11 +133,13 @@
     #post .scoll{
         height: 480px;
     }
+    #pav-slideshow{
+        height: 446px;
+    }
     #pav-slideshow>.container{
         width: calc(100% - 300px);
         margin-left: 20px;
-        min-height: 320px;
-        max-height: 550px;
+        height: 446px;
         float: left;
     }
     #product-mostview>.scoll{

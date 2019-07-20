@@ -15,21 +15,21 @@
 			</div>
 			<div class="cart-mobile">
 				<p>
-					<a href="{{asset('/cart')}}" class="wh100" 
+					<a href="{{asset('/gio-hang')}}" class="wh100" 
 						title="thông tin giỏ hàng">
 						<span class="cart-item">{{$productNumberInTheCart}}</span>
 						<i class="fas fa-shopping-cart"></i>
 					</a>
 				</p>
 				<p>
-					<a href="{{asset('/wishlist')}}" class="wh100" 
+					<a href="{{asset('/san-pham-ua-thich')}}" class="wh100" 
 						title="thông tin giỏ hàng">
 						<span class="totalWishList-mb">{{$productNumberInTheWishlist}}</span>
 						<i class="fas fa-heart"></i>
 					</a>
 				</p>
 				<p>
-					<a href="{{asset('/compare')}}" class="wh100" 
+					<a href="{{asset('/so-sanh')}}" class="wh100" 
 						title="thông tin giỏ hàng">
 						<span class="totalCompare-mb">{{$productNumberInTheCompare}}</span>
 						<i class="fas fa-retweet"></i>
@@ -59,7 +59,7 @@
 		<div id="topbar-top" class="w100min">
 			<div class="container">
 				<div class="check-cart col-top">
-					<a class="wh100" href="{{asset('/san-pham-au-thich')}}" 
+					<a class="wh100" href="{{asset('/san-pham-ua-thich')}}" 
 						title="sản phẩm yêu thích">
 						<i class="fas fa-heart"></i>
 						<p>Sản Phẩm Ưa Thích (<span class="totalWishList">{{$productNumberInTheWishlist}}</span>)</p>
@@ -121,7 +121,7 @@
 				</div>
 				<div class="cart">
 					<h3 class="wh100">
-						<a class="wh100" href="{{asset('/cart')}}"><span class="cart-item" data-cart='{{$productNumberInTheCart}}'>{{$productNumberInTheCart}}</span> Sản phẩm - <span class="cart-price" data-price='{{0}}'>{{'0'}}</span> vnđ</a>
+						<a class="wh100" href="{{asset('/gio-hang')}}"><span class="cart-item" data-cart='{{$productNumberInTheCart}}'>{{$productNumberInTheCart}}</span> Sản phẩm - <span class="cart-price" data-price='{{0}}'>{{'0'}}</span> vnđ</a>
 					</h3>
 				</div>
 			</div>

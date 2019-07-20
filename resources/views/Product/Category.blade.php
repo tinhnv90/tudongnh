@@ -34,6 +34,6 @@
 	<?php $listproducts=$listProductOfCategory['listproduct']; ?>
 	@include('Product.ListProducts')
 	@if(isset($countproduct) && $countproduct>16)
-		@include('common.page')
+		@include('Common.page')
 	@endif
 </div>

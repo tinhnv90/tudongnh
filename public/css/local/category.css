@@ -16,6 +16,7 @@
 #filter{
 	padding: 20px 0px;
 	height: 30px;
+	margin-bottom: 10px;
 }
 #filter select{
 	height: 25px;
