@@ -88,9 +88,11 @@ class ShoppingCartController extends Controller{
     	return response()->json(['result'=>$request->idproduct]);
     }
     public function removecompare(Request $request){
+        $request->session()->forget('productInTheCompare.'.$request->idproduct);
     	return response()->json(['result'=>$request->idproduct]);
     }
     public function removewishlist(Request $request){
+        $request->session()->forget('productInTheWishlist.'.$request->idproduct);
     	return response()->json(['result'=>$request->idproduct]);
     }
 }

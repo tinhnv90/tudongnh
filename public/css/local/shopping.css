@@ -58,9 +58,9 @@
 	font-size: 17px;
 }
 .container h3{
-	height: calc(100% - 70px);
+	height: calc(100% - 58px);
     overflow: hidden;
-    padding-top: 10px;
+    padding-top: 7px;
 }
 .container h4{
 	margin: unset;
@@ -69,9 +69,6 @@
 }
 .container h4>span{
 	font-weight: bold;
-}
-.detail-product{
-	margin-top: 5px;
 }
 .detail-product>p{
 	margin: unset;
@@ -84,7 +81,7 @@
 .detail-product>p>span{
 	margin-left: 5px;
 }
-.remove-cart{
+.remove-cart,.remove-compare,.remove-wishlist{
     background: red;
     width: 50px;
     margin: 0px auto;

@@ -28,7 +28,7 @@
 @section('content')
 <div id="content" class="w100min">
 	<div id="content-right">
-		@include('Product.category')
+		@include('Product.Category')
 	</div>
 	<div id="left" class="bor-box">
 		<?php $idcategory=$listProductOfCategory['idcategory'];

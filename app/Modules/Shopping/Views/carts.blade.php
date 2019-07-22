@@ -67,7 +67,7 @@
 					</div>
 					<div class="col-product">
 						<h3>{{$product['namePro']}}</h3>
-						<h4>Mã Sản Phẩm :<span>{{$product['codepro']}}</span></h4>
+						<h4 class="bor-t">Mã Sản Phẩm :<span>{{$product['codepro']}}</span></h4>
 						<div class="detail-product w100min">
 							<p>Công Suất :<span>{{$product['get_detail']['poweCapacity']}}</span></p>
 							<p>Kích Thước :<span>{{$product['get_detail']['size']}}</span></p>
@@ -75,7 +75,7 @@
 						</div>
 					</div>
 					<div class="col-number">
-						<p>{{Session::get('productInTheCart.'.$product['idproduct'])[$key]}}</p>
+						<p>{{Session::get('productInTheCart.'.$product['idproduct'])[0]}}</p>
 					</div>
 					<div class="col-price">
 						<p>@if($product['get_detail']['price']==0)Liên Hệ @else {{$product['get_detail']['price']}} @endif</p>
