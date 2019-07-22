@@ -1,9 +1,8 @@
 <div id="product-list-by-category" class="w100min">
 	<div class="title-page bor-b">
-		<h3>
 			<span>
-				<a href="{{$urlcate.$listProductOfCategory['pathCt']}}" 
-					title="{{$listProductOfCategory['titleCt']}}">{{$listProductOfCategory['titleCt']}}</a>
+				<a href="{{$urlcate.$category['pathCt']}}" 
+					title="{{$category['titleCt']}}">{{$category['titleCt']}}</a>
 			</span>
 		</h3>
 	</div>
@@ -31,7 +30,6 @@
 		</form>
 	</div>
 	@endif
-	<?php $listproducts=$listProductOfCategory['listproduct']; ?>
 	@include('Product.ListProducts')
 	@if(isset($countproduct) && $countproduct>16)
 		@include('Common.page')

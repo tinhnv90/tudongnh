@@ -30,13 +30,18 @@ class HomepagesController extends Controller{
         //danh sách sản phẩm chính của trang web
         $idcategory=tblhtml::where('properties','listProductOfCategoryInHome')
             ->first()->toArray()['value'];
-        $listProductOfCategoryInHome=tblcategory::query()
-            ->with(['listproduct'=>function($query){
-                $query->with('getImages','getDetail')
-                    ->orderBy('numview','DESC')->limit(8);
-            }])->where('idcategory',$idcategory)
+        $category=tblcategory::query()
+            ->with('getSeo','getImages')
+            ->where('idcategory',$idcategory)
             ->first()->toArray();
-        $data['listProductOfCategory']=$listProductOfCategoryInHome;
+        $data['category']=$category;
+
+        $listproduct=tblproduct::query()
+            ->with('getImages','getDetail')
+            ->where('idcategory',$idcategory)
+            ->orderBy('numview','DESC')->limit(8)
+            ->get()->toArray();
+        $data['listproducts']=$listproduct;
 
         //danh sách 3 banner trang chủ
         $listbanner=tblbanner::query()->with('getImages')

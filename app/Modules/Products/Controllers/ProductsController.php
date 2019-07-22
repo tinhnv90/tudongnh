@@ -104,26 +104,50 @@ class ProductsController extends Controller{
             .'&limit='.$request->limit;
         }
         $this->data['urlpage']=$urlpage;
-        $this->data['productNumberDisplayed']=$limit;//số sản phẩn hiển thị
-        $this->data['countproduct']=tblproduct::
-        join('tblcategories','tblcategories.idcategory','=','tblproducts.idcategory')
-        ->where(['pathCt'=>$pathCt,'tblcategories.pathCt'=>$pathCt])->count();
+        $this->data['productNumberDisplayed']=$limit;//số sản phẩn hiển thị trong trang
         //**************end page**************
 
         $this->data['ordername']=$orderby[0];
         $this->data['ordervalue']=$orderby[1];
         $this->data['limit']=$limit;
-        //danh sách sản phẩm
-        $listProductOfCategory=tblcategory::query()
-            ->with(['listproduct'=>function($query){
-                $query->with('getImages','getDetail')
-                ->orderBy($this->data['ordername'],$this->data['ordervalue'])
-                ->offset(($this->data['page']-1)*$this->data['limit'])
-                ->take($this->data['limit'])->get()->toArray();;
-            }])->where('pathCt',$pathCt)
-            ->with('getSeo','getImages')
+
+        //danh sách id danh mục sản phẩm hiển thị
+        $category=tblcategory::query()
+            ->with('children','getSeo','getImages')
+            ->where('pathCt',$pathCt)
             ->first()->toArray();
-        $this->data['listProductOfCategory']=$listProductOfCategory;
+        $this->data['category']=$category;
+
+        //dùng đánh dấu(active menu) danh mục được chọn trong menu left
+        $this->data['idcategory']=$category['idcategory'];
+        $this->data['idparent']=$category['leveCt'];
+
+        //danh sách id danh mục con nếu có
+        $listidcategory[]=$category['idcategory'];
+        if(count($category['children'])>0){
+            unset($listidcategory);
+            foreach ($category['children'] as $children)
+               $listidcategory[]=$children['idcategory'];
+        }
+
+
+        //tổng số sản phẩm của danh mục được chọn, dùng trang phân trang
+        $countproduct=tblproduct::
+        join('tblcategories','tblcategories.idcategory','=','tblproducts.idcategory')
+        ->whereIn('tblproducts.idcategory',$listidcategory)->count();
+        $this->data['countproduct']=$countproduct;
+
+        //danh sách sản phẩm
+        $listproducts=tblproduct::query()
+            ->with('getImages','getDetail')
+            ->whereIn('idcategory',$listidcategory)
+            ->orderBy($this->data['ordername'],$this->data['ordervalue'])
+            ->offset(($this->data['page']-1)*$this->data['limit'])
+            ->take($this->data['limit'])
+            ->get()->toArray();
+        $this->data['listproducts']=$listproducts;
+
+        //số sản phẩm hiển thị trên 1 hàng
         $this->data['numberColumn']=4;
         //end
         return view('Products::Category',$this->data);
