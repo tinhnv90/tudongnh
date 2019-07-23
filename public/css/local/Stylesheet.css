@@ -87,12 +87,23 @@ h3{margin: unset;}
     float: left;
 }
 #logo>h1{
-    margin: 5px 0px 10px;
+    height: 100%;
+    width: auto;
+    float: left;
+    margin: 0px;
 }
-#logo>h1>a{
+#logo a{
     color: #fff;
     font-family: cursive;
     font-size: 45px;
+    height: 100%;
+    width: auto;
+    float: left;
+}
+#logo img{
+    height: 100%;
+    width: auto;
+    float: left;
 }
 #layout-left,#layout-right{
 	width: calc(50% - 650px);
@@ -525,6 +536,7 @@ h3{margin: unset;}
     margin: 0px auto;
     text-align: center;
     margin-top: 50px;
+    background: #fff;
 }
 #zoom-images>.war-images>img{
     width: auto;

@@ -110,7 +110,17 @@
 		</div>
 		<div id="topbar-bottom" class="w100min">
 			<div id="logo" class="col50">
-				<h1><a href="{{asset('/')}}" title="Trang Chủ">TuDongNhaHang.Com</a></h1>
+				@if(isset($logotext))
+					<h1>
+						<a href="{{asset('/')}}" 
+							title="Trang Chủ Tủ Đông Inox Nhà Hàng">{{$logotext}}</a>
+					</h1>
+				@else
+					<a href="{{asset('/')}}" title="Trang Chủ Tủ Đông Inox Nhà Hàng">
+						<img src="{{$infoweb['imglogo']}}" 
+							alt="logo Trang Chủ Tủ Đông Inox Nhà Hàng">
+					</a>
+				@endif
 			</div>
 			<div id="topbar-bottom-right" class="col50">
 				<div class="search">
