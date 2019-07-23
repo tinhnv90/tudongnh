@@ -8,7 +8,7 @@
     <meta name="keywords" content="@yield('keywords')">
     <meta name="_token" content="{{csrf_token()}}" />
 
-    <meta property="fb:app_id" content="" />
+    <meta property="fb:app_id" content="{{$appface['descript']}}" />
     <meta property="og:url"         content="{{url()->current()}}" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="@yield('title')" />
@@ -28,8 +28,7 @@
     <meta name="copyright" content="Copyright © 2019 tudongnhahang.com by tinhnv">
 </head>
 <body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=301735517272841&autoLogAppEvents=1"></script>
+    <?php echo $appface['value']; ?>
     
     <div id="layout-left" class="hide-mobile"></div>
     <div id="container">
