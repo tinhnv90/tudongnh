@@ -5,7 +5,7 @@
 	<div class="scoll">
 		<ul>
 		@foreach($listPostMostView as $posts)
-			<li class="col-pro5">
+			<li class="col-pro5 first">
 				<div class="images w100min">
 					<a class="wh100" href="{{$urlpost.$posts['pathPost']}}" 
 						title="{{$posts['titlePost']}}">

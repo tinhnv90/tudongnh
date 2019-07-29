@@ -70,6 +70,7 @@ class BaseAdminController extends Controller
     }
 
     public function home(){
+
     	return view('admins.home',$this->data);
     }
 
@@ -91,7 +92,8 @@ class BaseAdminController extends Controller
         processwebseting::dbupdate_Html('mastertool',$request->mastertool);
         $arrayValue=['descript'=>$request->appidface,'value'=>$request->facebook_sdk];
         processwebseting::dbupdate_Html_face('appface',$arrayValue);
-
+        processwebseting::dbupdate_Html_logotext($request->logoName);
+        
         $this->data=array_merge($this->data,processwebseting::show_webseting());
         return view('admins.webseting',$this->data);
     }
@@ -245,7 +247,7 @@ class BaseAdminController extends Controller
 
             $pathproduct=stringProcessing::convert_PathUrl($this->data['nameproduct']);
         $this->data['listproducts']=tblproduct::query()
-            ->with('getproductDetail','getproductImages')
+            ->with('getDetail','getImages')
             ->orderBy('idproduct','DESC')
             ->where([
             	['pathPro','like','%'.$pathproduct.'%'],
@@ -490,4 +492,5 @@ class BaseAdminController extends Controller
             ->first()->toArray()['value'];
         return view('admins.introduce',$this->data);
     }
+
 }

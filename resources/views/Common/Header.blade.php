@@ -169,16 +169,32 @@
 	</div>
 	<div id="wrapper" class="w100min">
 		<div class="col25-p first">
+			@if(isset($listwarpper))
+			<h4 class="nametext">{{$listwarpper[0]['descript']}}<br/>{{$listwarpper[0]['value']}}</h4>
+			@else
 			<h4 class="nametext">Miễn Phí Giao Hàng.<br/>Trong Nội Thành Hà Nội</h4>
+			@endif
 		</div>
 		<div class="col25-p">
-			<h4 class="nametext">Chính Sách Đổi Trả Dễ Dàng.<br/>Không lo Hàng Giả, Hàng Nhái</h4>
+			@if(isset($listwarpper))
+			<h4 class="nametext">{{$listwarpper[1]['descript']}}<br/>{{$listwarpper[1]['value']}}</h4>
+			@else
+			<h4 class="nametext">Miễn Phí Giao Hàng.<br/>Trong Nội Thành Hà Nội</h4>
+			@endif
 		</div>
 		<div class="col25-p">
-			<h4 class="nametext">Bảo Hành Dài Hạn.<br/>12 Tháng Bảo Hành Lỗi Kỹ Thuật</h4>
+			@if(isset($listwarpper))
+			<h4 class="nametext">{{$listwarpper[2]['descript']}}<br/>{{$listwarpper[2]['value']}}</h4>
+			@else
+			<h4 class="nametext">Miễn Phí Giao Hàng.<br/>Trong Nội Thành Hà Nội</h4>
+			@endif
 		</div>
 		<div class="col25-p last">
-			<h4 class="nametext">HotLine 24/7<br/>Đội Ngũ Tư Vấn Luôn Sẵn Sàng</h4>
+			@if(isset($listwarpper))
+			<h4 class="nametext">{{$listwarpper[3]['descript']}}<br/>{{$listwarpper[3]['value']}}</h4>
+			@else
+			<h4 class="nametext">Miễn Phí Giao Hàng.<br/>Trong Nội Thành Hà Nội</h4>
+			@endif
 		</div>
 	</div>
 </div>

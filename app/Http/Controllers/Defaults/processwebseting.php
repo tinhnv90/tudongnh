@@ -48,6 +48,17 @@ class processwebseting extends Controller
     	DB::table('tblhtmls')->where($arrayParameter)
     		->update(['descript'=>$saveDescript]);
     }
+    public static function dbupdate_Html_logotext($value){
+        $isCheck=tblhtml::where('properties','logotext')->first();
+        if($isCheck==null){
+            tblhtml::insert(['properties'=>'logotext','value'=>$value]);
+        }elseif($value==''){
+            tblhtml::where('properties','logotext')->delete();
+        }else{
+            DB::table('tblhtmls')->where('properties','logotext')
+                ->update(['value'=>$value]);
+        }
+    }
     public static function show_webseting(){
     	$data['listtheme']=tblhtml::where('properties','theme')->get()->toArray();
         $data['infoweb']=tblinfoweb::
@@ -58,6 +69,12 @@ class processwebseting extends Controller
             where(['properties'=>'theme','value'=>$data['infoweb']['theme']])
             ->orWhereIn('properties',['analytic','mastertool','appface'])
             ->get()->toArray();
+
+        $data['logotext']='';
+        $info=tblhtml::where('properties','logotext')->first();
+        if($info!=null){
+            $data['logotext']=$info->toArray()['value'];
+        }
         return $data;
     }
 

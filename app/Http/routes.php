@@ -15,16 +15,24 @@ Route::post('/add-cart', 'BaseControllers@add_cart');
 Route::post('/add-wishlist', 'BaseControllers@add_wishlist');
 Route::post('/add-compare', 'BaseControllers@add_compare');
 Route::get('/errorpage','BaseControllers@errorpage');
+Route::get('/update-images-in-product-content','BaseControllers@imagesProduct');
 
 Route::group(['prefix'=>'admin'],function(){
 	Route::auth();
-	Route::get('/','BaseAdminController@home');
-	Route::get('/home', 'HomeController@home');
-	Route::get('/dashboard','BaseAdminController@home');
 	Route::post('/choosefolder','BaseAdminController@choosefolder');
 	Route::get('/webseting','BaseAdminController@get_webseting');
 	Route::post('/webseting','BaseAdminController@post_webseting');
-	
+	Route::get('/', 'HomeController@infohome');
+	Route::get('/dashboard','HomeController@infohome');
+	Route::post('/savewarpper','HomeController@savewarpper');
+	Route::post('/saveContentLeft','HomeController@saveContentLeft');
+	Route::post('/saveListProduct','HomeController@saveListProduct');
+	Route::post('/saveProductMain','HomeController@saveProductMain');
+	Route::post('/savePostType','HomeController@savePostType');
+	Route::post('/savespecialPost','HomeController@savespecialPost');
+	Route::post('/post2','HomeController@savepost2');
+	Route::post('/post3','HomeController@savepost3');
+
 	Route::group(['prefix'=>'menu'],function(){
 		Route::get('/','BaseAdminController@menu');
 		Route::post('/delete','BaseAdminController@menudelete');

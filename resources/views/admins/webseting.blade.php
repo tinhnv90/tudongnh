@@ -2,7 +2,7 @@
 @section('title','Thiết Lập Website')
 @section('titlepage','Thiết Lập Website')
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'webdesign.css'}}">
+<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'webseting.css'}}">
 <script type="text/javascript" src="{{$scriptAdmin.'baseinfoweb.js'}}"></script>
 @stop
 @section('frameImages')
@@ -97,6 +97,9 @@
 			value="{{$infoweb['imglogo']}}" hidden>
 			<img class="openFileImages logo-web"
 				src="{{$infoweb['imglogo']}}" name="imglogo">
+			<span class="orlogo">Hoặc</span>
+			<input type="text" name="logoName" 
+				placeholder="Logo Bằng Chữ" value="{{$logotext}}">
 		</div>
 		<div class="w100min iconweb">
 			<p>Icon :</p>

@@ -104,6 +104,10 @@ class AppServiceProvider extends ServiceProvider
             ->where('theme','<>','')
             ->first()->toArray()
         );
+        $logotext=tblhtml::where('properties','logotext')->first();
+        if($logotext!=null){
+            View::share('logotext',$logotext->toArray()['value']);
+        }
         
         $codeSeo=tblhtml::
             whereIn('properties',['analytic','mastertool','appface'])

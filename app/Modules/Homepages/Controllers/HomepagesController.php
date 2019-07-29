@@ -74,6 +74,43 @@ class HomepagesController extends Controller{
         if($request->session()->has('productInTheWishlist')){
             $data['productNumberInTheWishlist']=count($request->session()->get('productInTheWishlist'));
         }
+        //end giỏ hàng
+
+        //thông tin warpper
+        $listwarpper=tblhtml::where('properties','like','warpper%')->get();
+        if($listwarpper!=null){
+        	$data['listwarpper']=$listwarpper->toArray();
+        }
+
+        //thông tin listmainleft
+        $listmainleft=tblhtml::where('properties','like','leftMain%')->get();
+        if($listmainleft!=null){
+        	$data['listmainleft']=$listmainleft->toArray();
+        }
+
+        //thông tin specialPost
+        $idspecialPost=tblhtml::where('properties','specialPost1')->first();
+        if($idspecialPost!=null){
+        	$idspecialPost=$idspecialPost->toArray()['value'];
+        	$data['specialPost']=tblpost::query()
+        		->with('getImages')
+        		->where('idPost',$idspecialPost)
+        		->first()->toArray();
+        }
+        $idspecialPost=tblhtml::where('properties','specialPost2')->first();
+        if($idspecialPost!=null){
+        	$idspecialPost=$idspecialPost->toArray()['value'];
+        	$data['specialPost2']=tblpost::
+        		where('idPost',$idspecialPost)
+        		->first()->toArray();
+        }
+        $idspecialPost=tblhtml::where('properties','specialPost3')->first();
+        if($idspecialPost!=null){
+        	$idspecialPost=$idspecialPost->toArray()['value'];
+        	$data['specialPost3']=tblpost::
+        		where('idPost',$idspecialPost)
+        		->first()->toArray();
+        }
         return view('Homepages::index',$data);
     }
 }

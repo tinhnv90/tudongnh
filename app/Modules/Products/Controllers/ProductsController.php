@@ -1,6 +1,7 @@
 <?php
 namespace App\Modules\Products\Controllers;
 
+use DB;
 use App\Model\tblhtml;
 use App\Model\tblpost;
 use App\Model\tblimage;
@@ -51,6 +52,8 @@ class ProductsController extends Controller{
             ->where('pathPro',$pathPro)
             ->first()->toArray();
         $this->data['infoProduct']=$infoProduct;
+        DB::table('tblproducts')->where('pathPro',$pathPro)
+            ->update(['numview'=>++$infoProduct['numview']]);
 
         //danh sách ảnh kèm theo
         $listimages=[];

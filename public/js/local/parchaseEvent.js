@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	function postAjax(url,json_parementer){
+	function postAjax(pathname,json_parementer){
+		var url=window.location.origin+'/'+pathname;
 		var jsonData=Object;
 		$.ajaxSetup({headers: {
 			'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -14,7 +15,6 @@ $(document).ready(function(){
         });
 		return jsonData;
 	}
-	var _domain=window.location.origin+'/tudongnh';
 
 	//sự kiện click menu trên mobile
 	$('#nav-bar-mobile>.open-nav-mobile>i').click(function(){
@@ -28,7 +28,6 @@ $(document).ready(function(){
 			$('#category-mobile').css('display','none');
 		}
 	});
-
 	//sự kiện chọn sản phẩm vào giỏ hàng
 	$('.add-cart').click(function(){
 		var idproduct=$(this).parent().attr('data-idproduct');
@@ -47,9 +46,9 @@ $(document).ready(function(){
 		if($('.productNumber').length>0)
 			productNumber=$('.productNumber').val();
 		//ajax post: add product in ther cart
-		var urlrequest=_domain+'/add-cart';
+		var pathname='add-cart';
 		var json_parementer={idproduct : idproduct, productNumber:productNumber};
-        var dataResult=postAjax(urlrequest,json_parementer);
+        var dataResult=postAjax(pathname,json_parementer);
 	});
 
 	//lựa chọn sản phẩm ưa thích
@@ -66,9 +65,9 @@ $(document).ready(function(){
 		$('.totalWishList-mb').text(numitem);
 
 		//ajax post: add product in ther cart
-		var urlrequest=_domain+'/add-wishlist';
+		var pathname='add-wishlist';
 		var json_parementer={idproduct : idproduct};
-        var dataResult=postAjax(urlrequest,json_parementer);
+        var dataResult=postAjax(pathname,json_parementer);
 	});
 	//lựa chọn sản phẩm so sánh
 	$('.add-compare').click(function(){
@@ -88,9 +87,9 @@ $(document).ready(function(){
 		$('.totalCompare-mb').text(numitem);
 
 		//ajax post: add product in ther cart
-		var urlrequest=_domain+'/add-compare';
+		var pathname='add-compare';
 		var json_parementer={idproduct : idproduct};
-        var dataResult=postAjax(urlrequest,json_parementer);
+        var dataResult=postAjax(pathname,json_parementer);
 	});
 
 	//thoát ảnh phóng to giữa màn hình

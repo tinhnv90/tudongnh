@@ -4,8 +4,8 @@
 	</div>
 	<div class="scoll">
 		<ul>
-		@foreach($listProductMostView as $products)
-			<li class="col-pro6">
+		@foreach($listProductMostView as $key=>$products)
+			<li class="col-pro6 @if($key==0)first @endif">
 				<div class="images w100min">
 					<a class="wh100" href="{{$urlpro.$products['pathPro']}}" 
 						title="{{$products['namePro']}}">

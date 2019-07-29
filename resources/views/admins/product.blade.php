@@ -39,7 +39,7 @@
 			</span>
 			<span class="w80 pad0 zoom">
 				<img alt="$products['namePro']" 
-					src="{{asset('public').$products['getproduct_images']['srcImg']}}">
+					src="{{asset('public').$products['get_images']['srcImg']}}">
 			</span>
 			<p class="w357">
 			@if(strlen($products['namePro']) <85)
@@ -49,8 +49,8 @@
 			@endif
 			</p>
 			<p class="w100p">{{$products['codepro']}}</p>
-			<p class="w100p">{{number_format($products['getproduct_detail']['price'])}}</p>
-			<p class="w80">{{$products['getproduct_detail']['number']}}</p>
+			<p class="w100p">{{number_format($products['get_detail']['price'])}}</p>
+			<p class="w80">{{$products['get_detail']['number']}}</p>
 			<p class="w50">
 				@if($products['statusPro']==0)Tắt @else Bật @endif
 			</p>

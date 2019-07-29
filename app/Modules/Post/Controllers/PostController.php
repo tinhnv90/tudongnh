@@ -1,6 +1,7 @@
 <?php
 namespace App\Modules\Post\Controllers;
 
+use DB;
 use App\Model\tblhtml;
 use App\Model\tblpost;
 use App\Model\tblimage;
@@ -43,6 +44,8 @@ class PostController extends Controller{
             ->where('pathPost',$pathPost)
             ->first()->toArray();
         $this->data['postdetail']=$postdetail;
+        DB::table('tblposts')->where('pathPost',$pathPost)
+            ->update(['numview'=>++$postdetail['numview']]);
 
         $listProductRecommend=tblproduct::query()
             ->with('getImages','getDetail','getSeo')

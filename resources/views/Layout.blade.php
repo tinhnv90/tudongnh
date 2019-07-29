@@ -7,6 +7,7 @@
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="_token" content="{{csrf_token()}}" />
+    <?php echo $analytic; ?>
 
     <meta property="fb:app_id" content="{{$appface['descript']}}" />
     <meta property="og:url"         content="{{url()->current()}}" />
@@ -28,8 +29,12 @@
     <meta name="copyright" content="Copyright © 2019 tudongnhahang.com by tinhnv">
 </head>
 <body>
+    <!--  Google mastertool -->
+    <?php echo $mastertool; ?>
+
+    <!-- javascript API facebook -->
     <?php echo $appface['value']; ?>
-    
+
     <div id="layout-left" class="hide-mobile"></div>
     <div id="container">
         @include('Common.Header')
@@ -40,8 +45,8 @@
     <div id="zoom-images" class="hidden">
         <div class="war-images bor-box">
             <p class="exit-war">x</p>
-            <img src="http://localhost/tudongnh/public/images/san-pham/bep-tu-cong-nghiep/bep-tu-cong-nghiep-3kw/bep-tu-cong-nghiep-wailaan-whc-3k.jpg" 
-            alt="alt img">
+            <img src="https://tudongnhahang.com/public/images/san-pham/tu-nau-com/linh-kien-tu-nau-com/aptomat-chong-giat.jpg" 
+            alt="zoom images">
         </div>
     </div>
 </body>

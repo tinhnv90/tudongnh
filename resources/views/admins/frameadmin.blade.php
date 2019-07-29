@@ -7,8 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'style.css'}}">
 	<link rel="stylesheet" type="text/css" href="{{$styleAdmin.'openfileimages.css'}}">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="{{$scriptAdmin.'scriptadmin.js'}}"></script>
 	@yield('stylesheet')
+	<script src="{{$scriptAdmin.'scriptadmin.js'}}"></script>
 </head>
 <body>
 	@yield('frameImages')
@@ -42,6 +42,9 @@
 				<ul class="subnav">
 					<li>
 						<a href="{{asset('/admin/webseting')}}">Web setting</a>
+					</li>
+					<li>
+						<a href="{{asset('/admin/info-home')}}">Nội Dung Trang Chủ</a>
 					</li>
 					<li>
 						<a href="{{asset('/admin/producer')}}">Nhà Sản Xuất</a>

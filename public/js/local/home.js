@@ -8,20 +8,18 @@ $(document).ready(function(){
     },4000);
 
     setInterval(function(){
-		$("#product-mostview>.scoll ul li:first-child").
+		$("#product-mostview>.scoll ul>.first").
 			animate({marginLeft:'-'+$(this).width()},2000,function(){
-				$('#product-mostview>.scoll ul li').css({'display':'block'});
-	        $(this).css({'margin':'unset','display':'none'})
+	        $(this).removeClass('first').css({'margin':'unset'})
                 .appendTo('#product-mostview>.scoll ul');
+            $("#product-mostview>.scoll ul li:first-child").addClass('first');
 	    });
     },2000);
 
     setInterval(function(){
         $("#posts>.scoll ul li:first-child").
             animate({marginLeft:'-'+$(this).width()},2000,function(){
-                $('#posts>.scoll ul li').css({'display':'block'});
-            $(this).css({'margin':'unset','display':'none'})
-                .appendTo('#posts>.scoll ul');
+            $(this).css({'margin':'unset'}).appendTo('#posts>.scoll ul');
         });
     },2000);
 
