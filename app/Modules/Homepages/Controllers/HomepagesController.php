@@ -96,7 +96,7 @@ class HomepagesController extends Controller{
         		->with('getImages')
         		->where('idPost',$idspecialPost)
         		->first()->toArray();
-        }
+        } 
         $idspecialPost=tblhtml::where('properties','specialPost2')->first();
         if($idspecialPost!=null){
         	$idspecialPost=$idspecialPost->toArray()['value'];

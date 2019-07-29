@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
 @section('javascript')
+<script src="{{$script.'home.js'}}"></script>
 <script src="{{$script.'jquery.zoom.js'}}"></script>
 <script>
 	$(document).ready(function(){
@@ -160,7 +161,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="left" class="bor-box">
+	<div id="left" class="bor-box hide-mobile">
 		<?php $idcategory=$infoProduct['idcategory'];
 		$idparent=$listproducts[0]['get_parent']['leveCt']; ?>
 		@include('left.category')

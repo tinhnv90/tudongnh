@@ -6,6 +6,9 @@
 <link rel="stylesheet" type="text/css" href="{{$style.'post-detail.css'}}">
 <link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
+@section('javascript')
+<script src="{{$script.'home.js'}}"></script>
+@stop
 @section('meta-face')
 <meta property="og:image"       
 	content="{{$dir.$postdetail['get_images']['srcImg']}}" />
@@ -35,7 +38,7 @@
 			<h3>Trích Dẫn: <span>{{$postdetail['quote']}}</span></h3>
 		</div>
 	</div>
-	<div id="left" class="bor-box">
+	<div id="left" class="bor-box hide-mobile">
 		@include('left.category')
 		@include('left.category')
 		@include('left.category')

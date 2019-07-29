@@ -19,7 +19,9 @@ $(document).ready(function(){
     setInterval(function(){
         $("#posts>.scoll ul li:first-child").
             animate({marginLeft:'-'+$(this).width()},2000,function(){
-            $(this).css({'margin':'unset'}).appendTo('#posts>.scoll ul');
+            $("#posts>.scoll ul li:last-child").css('display','block');
+            $(this).css({'margin':'unset','display':'none'}).
+            appendTo('#posts>.scoll ul');
         });
     },2000);
 
