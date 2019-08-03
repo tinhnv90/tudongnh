@@ -1,0 +1,60 @@
+#login{
+	width: calc(40% - 2px);
+	min-height: 10px;
+	float: left;
+}
+#register{
+	width: calc(60% - 22px);	
+	min-height: 10px;
+	float: left;
+	margin-left: 20px;
+}
+.frame-login>form>div,.frame-register>form>div{
+	width: calc(100% - 20px);
+	min-height: 10px;
+	padding: 15px 10px;
+	float: left;
+}
+.frame-login>form label,.frame-register>form label{
+	width: 30%;
+	height: 25px;
+	float: left;
+	font-size: 18px;
+}
+.frame-login>form input,.frame-register>form input{
+    width: calc(70% - 9px);
+    height: 25px;
+    float: left;
+    padding-left: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+.provision p{
+	margin: unset;
+	width: 60%;
+	height: 25px;
+	float: left;
+	text-align: right;
+	padding-right: 10px
+}
+.provision p>a{
+	color: cyan;
+}
+.provision input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+.btn{
+	text-align: center;
+}
+.btn>button{
+	width: 150px;
+	height: 25px;
+}
+.note-register{
+	float: right;
+    margin-right: 30px;
+    margin-top: unset;
+}

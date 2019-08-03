@@ -1,0 +1,13 @@
+<?php
+	$namespace="App\Modules\User\Controllers";
+	Route::group(
+		["middleware"=>["web"],"module"=>"User","namespace"=>$namespace],
+		function(){
+			Route::auth();
+			Route::get('dang-nhap',"UserController@login");
+			Route::post('dang-nhap',"UserController@post_login");
+			Route::get('dang-ky',"UserController@register");
+			Route::post('dang-ky',"UserController@post_register");
+		}
+	);
+?>
