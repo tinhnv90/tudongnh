@@ -22,12 +22,14 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        if(Auth::check()){
+        if(!Auth::check() || Auth::user()->type!=68){
+            Auth::logout();
+            return redirect('admin/login');
+        }
             $this->data['useradmin']=Auth::user();
             $this->data['useradmin']['srcImg']=tblimage::
                 where('idImg',$this->data['useradmin']['idImg'])
                 ->first()->toArray()['srcImg'];
-        }
     }
 
     public function logout(){

@@ -24,6 +24,7 @@ class ServiceProvider extends  \Illuminate\Support\ServiceProvider{
         View::share('urlcate',asset('/danh-muc').'/');
         View::share('urlpost',asset('/tin-tuc').'/');
         View::share('dir',$domain);
+
     }
     public function register(){}
 }

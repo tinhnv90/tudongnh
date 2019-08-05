@@ -1,6 +1,7 @@
 <?php
 namespace App\Modules\Shopping\Controllers;
 
+use Auth;
 use App\Model\tblhtml;
 use App\Model\tblpost;
 use App\Model\tblimage;
@@ -19,6 +20,8 @@ class ShoppingCartController extends Controller{
      * @return void
      */
     public function __construct(Request $request){
+        if(Auth::check() && Auth::user()->type==68)
+            Auth::logout();
         //giỏ hàng
         $this->data['productNumberInTheCart']=0;
         $this->data['totalMoney']=0;

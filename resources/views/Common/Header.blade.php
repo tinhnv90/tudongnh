@@ -76,9 +76,31 @@
 					<a href="{{asset('/tai-khoan')}}" title="My Account" 
 						class="account">
 						<i class="fa fa-user"></i>
+						@if(Auth::check())
+						<?php $user_done=Auth::user(); ?>
+						<p class="login-done">{{$user_done->name}}</p>
+						@endif
 						<i class="fas fa-caret-down"></i>
 					</a>
 					<ul class="mb login">
+					@if(isset($user_done))
+						<li>
+							<a href="{{asset('/tai-khoan')}}" 
+								title="Tài Khoản">Tài Khoản</a>
+						</li>
+						<li>
+							<a href="{{asset('/lich-su-giao-dich')}}" 
+								title="Lịch Sử Giao Dịch">Lịch Sử Giao Dịch</a>
+						</li>
+						<li>
+							<a href="{{asset('/thanh-toan')}}" 
+								title="Thanh Toán">Thanh Toán</a>
+						</li>
+						<li>
+							<a href="{{asset('/dang-xuat')}}" 
+								title="Đăng Ký">Đăng Xuất</a>
+						</li>
+					@else
 						<li>
 							<a href="{{asset('/dang-nhap')}}" 
 								title="Đăng Nhập">Đăng Nhập</a>
@@ -87,6 +109,7 @@
 							<a href="{{asset('/dang-ky')}}" 
 								title="Đăng Ký">Đăng Ký</a>
 						</li>
+					@endif
 					</ul>
 				</div>
 				<div class="langauge col-top">

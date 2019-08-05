@@ -1,6 +1,7 @@
 <?php
 namespace App\Modules\Homepages\Controllers;
 
+use Auth;
 use App\Model\tblhtml;
 use App\Model\tblpost;
 use App\Model\tblbanner;
@@ -17,6 +18,8 @@ class HomepagesController extends Controller{
      * @return void
      */
     public function __construct(){
+        if(Auth::check() && Auth::user()->type==68)
+            Auth::logout();
         # parent::__construct();
     }
     public function index(Request $request){

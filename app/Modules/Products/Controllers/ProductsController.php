@@ -2,6 +2,7 @@
 namespace App\Modules\Products\Controllers;
 
 use DB;
+use Auth;
 use App\Model\tblhtml;
 use App\Model\tblpost;
 use App\Model\tblimage;
@@ -20,6 +21,8 @@ class ProductsController extends Controller{
      * @return void
      */
     public function __construct(Request $request){
+        if(Auth::check() && Auth::user()->type==68)
+            Auth::logout();
         //giỏ hàng
         $this->data['productNumberInTheCart']=0;
         $this->data['totalMoney']=0;

@@ -33,12 +33,14 @@ class BaseAdminController extends Controller
     public $processingpro;
     public function __construct(Request $request){
         $this->middleware('auth');
-        if(Auth::check()){
+        if(!Auth::check() || Auth::user()->type!=68){
+            Auth::logout();
+            return redirect('admin/login');
+        }
             $this->data['useradmin']=Auth::user();
             $this->data['useradmin']['srcImg']=tblimage::
                 where('idImg',$this->data['useradmin']['idImg'])
                 ->first()->toArray()['srcImg'];
-        }
         $this->data['listfolder']=$this->listfolder($request);
         $this->data['listfile']=scandir(public_path().'/images');
         //dd($this->data['listfile']);
@@ -70,7 +72,6 @@ class BaseAdminController extends Controller
     }
 
     public function home(){
-
     	return view('admins.home',$this->data);
     }
 
