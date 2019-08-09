@@ -1,14 +1,17 @@
 <?php
 namespace App\Modules\Shopping\Controllers;
 
+use DB;
 use Auth;
 use App\Model\tblhtml;
 use App\Model\tblpost;
 use App\Model\tblimage;
 use App\Model\tblbanner;
 use App\Model\tblproduct;
+use App\Model\tblinvoice;
 use App\Model\tblcategory;
 use Illuminate\Http\Request;
+use App\Model\tblinvoiceDetail;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Defaults\stringProcessing;
 
@@ -53,6 +56,17 @@ class ShoppingCartController extends Controller{
 				->get()->toArray();
 			$this->data['listproduct']=$listproduct;
 		}
+
+        $tblinvoice=tblinvoice::where([
+            'id'=>Auth::user()->id,
+            'created_at'=>date('Y-m-d'),
+            'paid'=>0
+            ])
+        ->orderBy('idinvoice','DESC')
+        ->first();
+        if($tblinvoice!=null){
+            $this->data['tblinvoice']=$tblinvoice->toArray();
+        }
 		return view('Shopping::carts',$this->data);
     }
 
@@ -97,6 +111,57 @@ class ShoppingCartController extends Controller{
     public function removewishlist(Request $request){
         $request->session()->forget('productInTheWishlist.'.$request->idproduct);
     	return response()->json(['result'=>$request->idproduct]);
+    }
+
+    public function order(Request $request){
+        if(Auth::check() && Auth::user()->type==68)
+            Auth::logout();
+        if(!Auth::check())
+            return redirect('dang-nhap');
+
+        if($request->codeinvoice==null){
+            tblinvoice::insert([
+                'id'=>$request->iduser,
+                'recipientName'=>$request->username,
+                'recipientPhone'=>$request->phone,
+                'recipientAdress'=>$request->adress_order,
+                'totalmoney'=>$request->sumprice,
+                'created_at'=>date('Y-m-d')
+            ]);
+        }else{
+            DB::table('tblinvoices')
+                ->where('code',$request->codeinvoice)
+                ->update([
+                    'id'=>trim($request->iduser),
+                    'recipientName'=>$request->username,
+                    'recipientPhone'=>$request->phone,
+                    'recipientAdress'=>$request->adress_order,
+                    'totalmoney'=>$request->sumprice,
+                    'created_at'=>date('Y-m-d')
+                ]);
+        }
+        $tblinvoice=tblinvoice::where([
+            'id'=>Auth::user()->id,
+            'created_at'=>date('Y-m-d'),
+            'paid'=>0
+        ])->orderBy('idinvoice','DESC')
+        ->first()->toArray();
+
+        $invoice=tblinvoice::find($tblinvoice['idinvoice']);
+        $invoice->code=crc32($tblinvoice['idinvoice']);
+        $invoice->save();
+
+        tblinvoiceDetail::where('idinvoice',$tblinvoice['idinvoice'])->delete();
+
+        $listproduct=$request->session()->get('productInTheCart');
+        foreach ($listproduct as $idproduct => $number) {
+            tblinvoiceDetail::insert([
+                'idproduct'=>$idproduct,
+                'idinvoice'=>$tblinvoice['idinvoice'],
+                'number'=>$number[0]
+            ]);
+        }
+        return redirect('/thanh-toan');
     }
 }
 

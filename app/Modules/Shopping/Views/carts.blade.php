@@ -7,23 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
 @section('javascript')
-<script>
-	$(document).ready(function(){
-		$('.remove-cart').click(function(){
-			$.ajaxSetup({headers: {
-				'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-			}});
-			$.ajax({
-	            type : 'POST',
-	            url  : window.location.origin+'/tudongnh/remove-cart',
-	            data : {idproduct:$(this).attr('data-idproduct')},
-	            success :  function(data){
-	                $('li[data-idproduct="'+data.result+'"]').remove();
-	            }
-	        });
-		});
-	});
-</script>
+<script src="{{$script.'payment.js'}}"></script>
 @stop
 @section('content')
 <div id="content">
@@ -56,6 +40,7 @@
 				</div>
 			</div>
 			<ul class="w100min">
+				<?php $sumprice=0; $isprice=true; ?>
 				@foreach($listproduct as $key=>$product)
 				<li class="w100min" data-idproduct="{{$product['idproduct']}}">
 					<div class="col-index">
@@ -66,7 +51,10 @@
 							alt="{{$product['get_images']['altImg']}}">
 					</div>
 					<div class="col-product">
-						<h3>{{$product['namePro']}}</h3>
+						<h3>
+							<a href="{{asset('/san-pham/'.$product['pathPro'])}}"
+							title="{{$product['namePro']}}">{{$product['namePro']}}</a>
+						</h3>
 						<h4 class="bor-t">Mã Sản Phẩm :<span>{{$product['codepro']}}</span></h4>
 						<div class="detail-product w100min">
 							<p>Công Suất :<span>{{$product['get_detail']['poweCapacity']}}</span></p>
@@ -85,10 +73,69 @@
 							data-idproduct="{{$product['idproduct']}}">x</p>
 					</div>
 				</li>
+				<?php 
+					$sumprice+=$product['get_detail']['price'];
+					if ($product['get_detail']['price']==0)
+						$isprice=false;	
+				?>
 				@endforeach
 			</ul>
+			<div class="w100min">
+				<h3 class="sumprice">Tổng Thành Tiền : <span class="color-red">{{$sumprice}}</span> vnđ</h3>
+			</div>
 		</div>
 		@endif
+		<div class="w100min payment">
+			<div class="title-page">
+				<h3>
+					<span class="active-payment @if(!Auth::check())payment-login @endif">ĐẶT HÀNG <i class="fas fa-caret-down"></i>
+					</span>
+					<p>Cập Nhật Thông Tin Đặt Hàng</p>
+				</h3>
+			</div>
+			@if(Auth::check())
+			<?php $user=Auth::user(); ?>
+			<div class="content w100min hidden">
+				<form action="{{asset('/dat-hang')}}" method="POST">
+					{{csrf_field()}}
+
+					<input type="text" name="iduser" value="{{$user->id}}" hidden>
+					<input type="text" name="sumprice" value="{{$sumprice}}" hidden>
+					<div class="w100min">
+						<label>Mã Hóa Đơn :</label>
+						<input type="text" name="codeinvoice" 
+							value="@if(isset($tblinvoice)){{$tblinvoice['code']}} @endif" disabled>
+						<input type="text" name="codeinvoice" 
+							value="@if(isset($tblinvoice)){{$tblinvoice['code']}} @endif" hidden>
+					</div>
+					<div class="w100min">
+						<label>Người Nhận <span class="color-red">*</span> :</label>
+						<input type="text" name="username" 
+							value="@if(isset($tblinvoice)){{$tblinvoice['recipientName']}}@else{{$user->name}}@endif">
+					</div>
+					<div class="w100min">
+						<label>Số Điện Thoại <span class="color-red">*</span> :</label>
+						<input type="text" name="phone" 
+							value="@if(isset($tblinvoice)){{$tblinvoice['recipientPhone']}}@else{{$user->phone}}@endif">
+					</div>
+					<div class="w100min">
+						<label>Địa Chỉ Nhận Hàng <span class="color-red">*</span> :</label>
+						<input type="text" name="adress_order" 
+							value="@if(isset($tblinvoice)){{$tblinvoice['recipientAdress']}}@else{{$user->adress}}@endif">
+					</div>
+					<div class="w100min" style="text-align: center;">
+						<button type="submit" name="btnorder">
+						@if(isset($tblinvoice))
+							Cập Nhập
+						@else
+							Đặt Hàng
+						@endif
+						</button>
+					</div>
+				</form>
+			</div>
+			@endif
+		</div>
 	</div>
 	<div id="left" class="bor-box">
 		@include('left.category')

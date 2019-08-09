@@ -1,4 +1,4 @@
-<div id="column-left" class="w100min bor-box">
+<div id="column-left" class="bor-box">
 	<div class="title-page bor-b">
 		<h3><p>TÀI KHOẢN</p></h3>
 	</div>

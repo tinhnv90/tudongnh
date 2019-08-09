@@ -62,6 +62,7 @@
 /*------------#category left--------------*/
 #left>div{
     margin-bottom: 20px;
+    width: calc(100% - 2px);
 }
 #left>div:last-child{
     margin-bottom: unset;
@@ -84,7 +85,7 @@
     display: none;
     padding-left: 10px;
     position: absolute;
-    left: calc(25% + -2px);
+    left: calc(25% + 13px);
     background: rgb(158, 132, 136);
     top: 395px;
     min-height: 360px;

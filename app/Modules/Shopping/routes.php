@@ -9,6 +9,7 @@ Route::group(
         Route::post('/remove-cart','ShoppingCartController@removecart');
         Route::post('/remove-compare','ShoppingCartController@removecompare');
         Route::post('/remove-wishlist','ShoppingCartController@removewishlist');
+        Route::post('/dat-hang','ShoppingCartController@order');
     }
 );
 ?>

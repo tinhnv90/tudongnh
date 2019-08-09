@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	function postAjax(pathname,json_parementer){
-		var url=window.location.origin+'/'+pathname;
+		var url=window.location.origin+'/tudongnh/'+pathname;
 		var jsonData=Object;
 		$.ajaxSetup({headers: {
 			'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')

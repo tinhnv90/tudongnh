@@ -9,7 +9,7 @@
     min-height: 10px;
     float: right;
 }
-#conten-right>.title-page>h3{
+#conten-right .title-page>h3{
 	background: rgba(255, 255, 255, 0.2);
 }
 .container>.title-table>div{
@@ -37,37 +37,37 @@
 .col-number,.col-price,.col-action{
 	width: 100px;
 }
-.container>ul{
+#conten-right .container>ul{
 	padding-left: unset;
 	margin: unset;
 }
-.container>ul>li{
+#conten-right .container>ul>li{
 	height: 130px;
 }
-.container>ul>li>div{
+#conten-right .container>ul>li>div{
 	height: 100%;
 }
-.container img{
+#conten-right .container img{
     padding: 5px;
     width: calc(100% - 10px);
     height: calc(100% - 10px);
     float: left;
 }
-.container li>div>p{
+#conten-right .container li>div>p{
 	margin-top: 50px;
 	font-size: 17px;
 }
-.container h3{
+#conten-right .container h3{
 	height: calc(100% - 58px);
     overflow: hidden;
     padding-top: 7px;
 }
-.container h4{
+#conten-right .container h4{
 	margin: unset;
 	height: 25px;
     font-size: 17px;
 }
-.container h4>span{
+#conten-right .container h4>span{
 	font-weight: bold;
 }
 .detail-product>p{
@@ -87,4 +87,50 @@
     margin: 0px auto;
     border-radius: 5px;
     font-weight: bold;
+}
+.payment .title-page{
+	margin-top: 10px;
+}
+.active-payment:hover,li>.col-action>p{
+	cursor: pointer;
+}
+.color-red{
+	color: red;
+}
+.payment form{
+	width: 60%;
+	height: 200px;
+	margin: 0px auto;
+}
+.payment form>div{
+	margin: 15px 0px;
+}
+.payment form label{
+	width: 200px;
+	height: 20px;
+	float: left;
+	padding-top: 5px;
+	font-size: 18px;
+}
+.payment form input{
+	width: 300px;
+	height: 25px;
+	float: left;
+	padding-left: 5px;
+}
+.payment>.title-page>h3>span{
+	margin-right: 20px;
+}
+.payment>.title-page>h3>p{
+    margin-bottom: unset;
+    margin-top: 13px;
+}
+button[name="btnorder"]{
+	width: 150px;
+	height: 25px;
+}
+.sumprice{
+	text-align: right;
+	padding-right: 30px;
+	width: calc(100% - 30px);
 }

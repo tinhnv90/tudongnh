@@ -10,6 +10,6 @@ class tblinvoice extends Model
     protected $primaryKey = 'idinvoice';
 
     protected $fillable = [
-        'idinvoice', 'id','totalmoney', 'discount','exportInvoice','paid'
+        'idinvoice', 'id','code','recipientName','recipientPhone','recipientAdress','totalmoney', 'discount','exportInvoice','paid'
     ];
 }

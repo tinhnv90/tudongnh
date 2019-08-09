@@ -1,12 +1,16 @@
 #column-left{
 	width: calc(25% - 2px);
+    min-height: 10px;
+    float: right;
 }
 #column-left>.title-page{
 	text-align: center;
 }
 #content{
-	width: calc(75% - 32px);
-	margin-left: 30px;
+    width: calc(75% - 32px);
+    margin-left: 30px;
+    min-height: 256px;
+    float: right;
 }
 #content>.title-page{
 	width: calc(100% - 20px);

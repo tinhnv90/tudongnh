@@ -88,8 +88,12 @@
 					@else
 					<h3 class="bor-b">GIAO DỊCH AN TOÀN</h3>
 					@endif
-					<img class="first" src="{{$icons.'card-vietcombank.jpg'}}" alt="Thẻ ngân hàng vietcombank">
-					<img src="{{$icons.'cart-techcombank.png'}}" alt="Thẻ ngân hàng techcombank">
+					<img class="first" src="{{$icons.'card-vietcombank.jpg'}}" 
+						alt="Thẻ ngân hàng vietcombank" 
+						title="Ngân Hàng vietcombank">
+					<img src="{{$icons.'cart-techcombank.png'}}" 
+						alt="Thẻ ngân hàng Techcombank" 
+						title="Ngân Hàng Techcombank">
 				</div>
 			</div>
 		</div>
