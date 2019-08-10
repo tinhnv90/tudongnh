@@ -24,6 +24,10 @@
 		</h3>
 		<h3>
 			<i class="fas fa-angle-double-right"></i>
+			<a href="{{asset('/gio-hang')}}" title="Thanh Toán">Giỏ Hàng</a>
+		</h3>
+		<h3>
+			<i class="fas fa-angle-double-right"></i>
 			<a href="{{asset('/thanh-toan')}}" title="Thanh Toán">Thanh Toán</a>
 		</h3>
 		@if(Auth::check())

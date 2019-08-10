@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
 @section('javascript')
-<script src="{{$script.'payment.js'}}"></script>
+<script src="{{$script.'cart.js'}}"></script>
 @stop
 @section('content')
 <div id="content">
@@ -40,7 +40,7 @@
 				</div>
 			</div>
 			<ul class="w100min">
-				<?php $sumprice=0; $isprice=true; ?>
+				<?php $sumprice=0; $isprice=true;  ?>
 				@foreach($listproduct as $key=>$product)
 				<li class="w100min" data-idproduct="{{$product['idproduct']}}">
 					<div class="col-index">
@@ -84,7 +84,6 @@
 				<h3 class="sumprice">Tổng Thành Tiền : <span class="color-red">{{$sumprice}}</span> vnđ</h3>
 			</div>
 		</div>
-		@endif
 		<div class="w100min payment">
 			<div class="title-page">
 				<h3>
@@ -98,7 +97,6 @@
 			<div class="content w100min hidden">
 				<form action="{{asset('/dat-hang')}}" method="POST">
 					{{csrf_field()}}
-
 					<input type="text" name="iduser" value="{{$user->id}}" hidden>
 					<input type="text" name="sumprice" value="{{$sumprice}}" hidden>
 					<div class="w100min">
@@ -136,11 +134,14 @@
 			</div>
 			@endif
 		</div>
+		@else
+			<p class="color-tomato">Giỏ hàng của bạn hiện không có sản phẩm nào</p>
+		@endif
 	</div>
 	<div id="left" class="bor-box">
 		@include('left.category')
-		@include('left.category')
-		@include('left.category')
+		@include('left.box-face')
+		@include('left.special-product')
 	</div>
 </div>
 @stop

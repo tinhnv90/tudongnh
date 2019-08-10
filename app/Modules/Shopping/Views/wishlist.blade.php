@@ -15,7 +15,7 @@
 			}});
 			$.ajax({
 	            type : 'POST',
-	            url  : window.location.origin+'/tudongnh/remove-wishlist',
+	            url  : window.location.origin+'/remove-wishlist',
 	            data : {idproduct:$(this).attr('data-idproduct')},
 	            success :  function(data){
 	                $('li[data-idproduct="'+data.result+'"]').remove();
@@ -92,8 +92,8 @@
 	</div>
 	<div id="left" class="bor-box">
 		@include('left.category')
-		@include('left.category')
-		@include('left.category')
+		@include('left.box-face')
+		@include('left.special-product')
 	</div>
 </div>
 @stop

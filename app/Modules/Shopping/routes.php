@@ -10,6 +10,13 @@ Route::group(
         Route::post('/remove-compare','ShoppingCartController@removecompare');
         Route::post('/remove-wishlist','ShoppingCartController@removewishlist');
         Route::post('/dat-hang','ShoppingCartController@order');
+        Route::get('thanh-toan',"ShoppingCartController@payment")
+            ->middleware('authCheckLogin');
+        Route::post('thanh-toan',"ShoppingCartController@post_payment")
+            ->middleware('authCheckLogin');
+        Route::get('shipcod',"ShoppingCartController@shipcod");
+        Route::get('viettinbank',"ShoppingCartController@viettinbank");
+        Route::get('techcombank',"ShoppingCartController@techcombank");
     }
 );
 ?>

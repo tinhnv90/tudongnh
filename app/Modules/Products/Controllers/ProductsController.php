@@ -41,12 +41,6 @@ class ProductsController extends Controller{
         if($request->session()->has('productInTheWishlist')){
             $this->data['productNumberInTheWishlist']=count($request->session()->get('productInTheWishlist'));
         }
-
-        $listSpecialProduct=tblproduct::query()
-            ->with('getImages')
-            ->limit(5)
-            ->get()->toArray();
-        $this->data['listSpecialProduct']=$listSpecialProduct;
     }
     public function ProductDetail($pathPro){
         //product infomation
@@ -85,6 +79,13 @@ class ProductsController extends Controller{
             ->orderBy('numview','DESC')
             ->limit(12)->get()->toArray();
         $this->data['listproducts']=$listRelatedProduct;
+
+
+        $listSpecialProduct=tblproduct::query()
+            ->with('getImages')
+            ->where('idcategory',$infoProduct['idcategory'])
+            ->limit(5)->get()->toArray();
+        $this->data['listSpecialProduct']=$listSpecialProduct;
         return view('Products::ProductDetail',$this->data);
     }
 
@@ -156,6 +157,11 @@ class ProductsController extends Controller{
         //số sản phẩm hiển thị trên 1 hàng
         $this->data['numberColumn']=4;
         //end
+        $listSpecialProduct=tblproduct::query()
+            ->with('getImages')
+            ->where('idcategory',$category['idcategory'])
+            ->limit(5)->get()->toArray();
+        $this->data['listSpecialProduct']=$listSpecialProduct;
         return view('Products::Category',$this->data);
     }
 }

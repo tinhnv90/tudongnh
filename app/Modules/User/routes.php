@@ -18,10 +18,6 @@
 				->middleware('authCheckLogin');
 			Route::get('lich-su-giao-dich',"UserController@transactionhistory")
 				->middleware('authCheckLogin');
-			Route::get('thanh-toan',"UserController@payment")
-				->middleware('authCheckLogin');
-			Route::post('thanh-toan',"UserController@post_payment")
-				->middleware('authCheckLogin');
 		}
 	);
 ?>

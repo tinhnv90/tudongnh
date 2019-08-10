@@ -124,26 +124,5 @@ class UserController extends Controller
 	public function transactionHistory(){
 		return view('User::transactionHistory',$this->data);
 	}
-	public function payment(){
-		if(Auth::check() && Auth::user()->type==68)
-            Auth::logout();
-        if(!Auth::check())
-            return redirect('/dang-nhap');
-
-		$invoice=tblinvoice::where([
-			'id'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d'),
-            'paid'=>0
-		])->orderBy('idinvoice','DESC')
-		->first();
-		if($invoice!=null){
-			$this->data['tblinvoice']=$invoice->toArray();
-		}
-
-		return view('User::payment',$this->data);
-	}
-	public function post_payment(Request $request){
-		dd($request->all());
-	}
 }
 ?>

@@ -7,22 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{$style.'payment.css'}}">
 @stop
 @section('javascript')
-<script>
-	$(document).ready(function(){
-		$('.bankplus>div>img').click(function(){
-			var url=window.location.origin+'/tudongnh/'+$(this).attr('title');
-			$.ajaxSetup({headers: {
-				'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-			}});
-			$.ajax({
-	            type : 'POST',
-	            url  : url,
-	            success :  function(data){
-	            }
-	        });
-		});
-	});
-</script>
+<script src="{{$script.'payment.js'}}"></script>
 @stop
 @section('content')
 <div id="content" class="bor-box">
@@ -69,16 +54,18 @@
 				<input type="text" name="totalmoney" value="{{$summoney}}" hidden>
 			</div>
 		</div>
+
+		<!--________________HÌNH THỨC THANH TOÁN___________________-->
 		<div class="title-page">
 			<h3><span>HÌNH THỨC THANH TOÁN</span></h3>
 		</div>
-		<div class="w100min bankplus bor-b">
+		<div class="w100min payment_type bor-b">
 			<div class="shipcod col33">
 				<span class="frameimg">
 					Thanh Toán Tiền Khi Nhận Hàng
 				</span>
 				<span class="w100min">
-					<input type="radio" name="bankplus" 
+					<input type="radio" name="payment_type" 
 						value="shipcod" checked> Ship COD
 				</span>
 			</div>
@@ -86,7 +73,7 @@
 				<img src="{{asset('/public/images/icons/card-vietcombank.jpg')}}" 
 					alt="Ngân Hàng Viettinbank" title="viettinbank">
 				<span class="w100min">
-					<input type="radio" name="bankplus" 
+					<input type="radio" name="payment_type" 
 						value="viettinbank"> Viettinbank
 				</span>
 			</div>
@@ -94,39 +81,45 @@
 				<img src="{{asset('/public/images/icons/cart-techcombank.png')}}" 
 					alt="Ngân hàng Techcombank" title="techcombank">
 				<span class="w100min">
-					<input type="radio" name="bankplus" 
+					<input type="radio" name="payment_type" 
 						value="techcombank"> Techcombank
 				</span>
 			</div>
 		</div>
-		<div class="w100min">
-			<div class="payment_active">
-				<div class="w100min">
-					<label>Số Thẻ :</label>
-					<input type="text" name="cardNumber" placeholder="Gồm 16 hoặc 19 số không dấu không dấu '-'">
-				</div>
-				<div class="w100min">
-					<label>Ngày Phát Hành :</label>
-					<input type="text" name="month" placeholder="Tháng">
-					<span class="slash">/</span>
-					<input type="text" name="year" placeholder="Năm">
-				</div>
-				<div class="w100min">
-					<label>Tên In Trên Thẻ :</label>
-					<input type="text" name="nameCard">
-				</div>
+		<div class="w100min payment-form">
+			<div class="payment-shipcod w100min">
+				<h2>Hình Thức Thanh Toán Ship COD - Nhận Hàng xong mới thanh toán</h2>
+				<p>Bạn cần đặt cọc tối thiểu 30% tổng giá trị đơn hàng.</p>
+				<p>số còn lại sẽ được thanh toán cho bên đơn vị vận chuyển hộ</p>
 			</div>
 		</div>
+		
+
+		
+
+		<!--_______________BUTTON THANH TOÁN___________________-->
+		<div class="title-page">
+			<h3><span>THANH TOÁN</span></h3>
+		</div>
 		<div class="w100min btnpayment">
-			<button type="submit" name="btnpayment">Thanh Toán</button>
+			<p class="note">* GIÁ TRÊN CHƯA BAO GỒM TRI PHÍ VẬN CHUYỂN NẾU CÓ.</p>
+
+			<button type="submit" name="btnpayment" 
+			@if($tblinvoice['totalmoney']==0 || !Session::has('productInTheCart')) disabled @endif>Thanh Toán</button>
+			<!--<button type="submit" name="btnpayment">Thanh Toán</button>-->
 		</div>
 	</form>
-	<div class="w100min">
-		<p class="note">Đơn đặt hàng sẽ bị hủy trong vòng 24h nếu bạn chưa thực hiện thanh toán</p>
+	<div class="w100min noted">
+		@if(!Session::has('productInTheCart'))
+			<p class="note">* Đơn hàng của bạn chưa có sản phẩm nào!</p>
+		@elseif($tblinvoice['totalmoney']==0)
+			<p class="note">* Trong giỏ hàng của bạn có sản phẩm chưa được liêm yết giá. bạn cần liên hệ với cửa hàng để cập nhật giá sản phẩm</p>
+		@endif
+		<p class="note">* Đơn đặt hàng sẽ bị hủy trong vòng 24h nếu bạn chưa thực hiện thanh toán.</p>
 	</div>
 	</div>
 	@else
-		<p class="note">Bạn chưa có đơn đặt hàng nào cần thanh toán trong ngày {{date('d/m/Y')}}</p>
+		<p class="note">* Bạn chưa có đơn đặt hàng nào cần thanh toán trong ngày {{date('d/m/Y')}}</p>
 	@endif
 </div>
 @include('User::left-category')

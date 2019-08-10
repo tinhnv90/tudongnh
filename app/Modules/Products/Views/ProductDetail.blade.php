@@ -165,8 +165,8 @@
 		<?php $idcategory=$infoProduct['idcategory'];
 		$idparent=$listproducts[0]['get_parent']['leveCt']; ?>
 		@include('left.category')
-		@include('left.category')
-		@include('left.category')
+		@include('left.box-face')
+		@include('left.special-product')
 	</div>
 
 	<div class="related-product w100min">

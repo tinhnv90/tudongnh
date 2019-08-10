@@ -81,3 +81,9 @@ form>.title-page>h3{
     min-height: 25px;
     float: left;
 }
+.payment-shipcod{
+	text-align: center;
+}
+.noted>p{
+	margin-bottom: unset;
+}
