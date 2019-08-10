@@ -5,7 +5,7 @@ $(document).ready(function(){
 		}});
 		$.ajax({
             type : 'POST',
-            url  : window.location.origin+'/remove-cart',
+            url  : window.location.origin+'/tudongnh/remove-cart',
             data : {idproduct:$(this).attr('data-idproduct')},
             success :  function(data){
                 $('li[data-idproduct="'+data.result+'"]').remove();
@@ -16,7 +16,7 @@ $(document).ready(function(){
         });
 	});
 	$('.payment-login').click(function(){
-		window.location.href=window.location.origin+'/dang-nhap';
+		window.location.href=window.location.origin+'/tudongnh/dang-nhap';
 	});
 	$('.active-payment ').click(function(){
 		if($('.payment>.content').hasClass('hidden'))

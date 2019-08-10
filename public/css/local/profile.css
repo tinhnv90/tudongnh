@@ -29,3 +29,14 @@
 #column-left>.content>h3>i{
 	color: silver;
 }
+#category-left{
+	margin-top: 25px;
+	width: calc(100% - 2px);
+}
+#category-left>.title-page>h3{
+	margin: 15px 0px;
+	text-align: center;
+}
+#category-left .parent>ul{
+	top: 732px !important;
+}

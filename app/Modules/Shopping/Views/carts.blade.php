@@ -95,7 +95,7 @@
 			@if(Auth::check())
 			<?php $user=Auth::user(); ?>
 			<div class="content w100min hidden">
-				<form action="{{asset('/dat-hang')}}" method="POST">
+				<form action="{{asset('/dat-hang')}}" method="POST" class="frmorder">
 					{{csrf_field()}}
 					<input type="text" name="iduser" value="{{$user->id}}" hidden>
 					<input type="text" name="sumprice" value="{{$sumprice}}" hidden>
@@ -110,16 +110,25 @@
 						<label>Người Nhận <span class="color-red">*</span> :</label>
 						<input type="text" name="username" 
 							value="@if(isset($tblinvoice)){{$tblinvoice['recipientName']}}@else{{$user->name}}@endif">
+						@if($errors->has('username'))
+							<span class="color-tomato">{{$errors->first('username')}}</span>
+						@endif
 					</div>
 					<div class="w100min">
 						<label>Số Điện Thoại <span class="color-red">*</span> :</label>
 						<input type="text" name="phone" 
 							value="@if(isset($tblinvoice)){{$tblinvoice['recipientPhone']}}@else{{$user->phone}}@endif">
+						@if($errors->has('phone'))
+							<span class="color-tomato">{{$errors->first('phone')}}</span>
+						@endif
 					</div>
 					<div class="w100min">
 						<label>Địa Chỉ Nhận Hàng <span class="color-red">*</span> :</label>
 						<input type="text" name="adress_order" 
 							value="@if(isset($tblinvoice)){{$tblinvoice['recipientAdress']}}@else{{$user->adress}}@endif">
+						@if($errors->has('adress_order'))
+							<span class="color-tomato">{{$errors->first('adress_order')}}</span>
+						@endif
 					</div>
 					<div class="w100min" style="text-align: center;">
 						<button type="submit" name="btnorder">

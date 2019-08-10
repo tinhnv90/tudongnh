@@ -4,6 +4,7 @@
 @section('keywords','lấy lại mật khẩu')
 @section('stylesheet')
 <link rel="stylesheet" type="text/css" href="{{$style.'profile.css'}}">
+<link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
 @section('content')
 <div id="content" class="w100min bor-box">

@@ -87,3 +87,14 @@ form>.title-page>h3{
 .noted>p{
 	margin-bottom: unset;
 }
+#category-left{
+	margin-top: 25px;
+	width: calc(100% - 2px);
+}
+#category-left>.title-page>h3{
+	margin: 15px 0px;
+	text-align: center;
+}
+#category-left .parent>ul{
+	top: 732px !important;
+}

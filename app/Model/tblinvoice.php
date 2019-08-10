@@ -12,4 +12,8 @@ class tblinvoice extends Model
     protected $fillable = [
         'idinvoice', 'id','code','recipientName','recipientPhone','recipientAdress','totalmoney', 'discount','exportInvoice','paid'
     ];
+
+    public function getDetail(){
+    	return $this->hasMany(tblinvoiceDetail::class,'idinvoice');
+    }
 }

@@ -1,5 +1,5 @@
 @if(isset($listSpecialProduct))
-<div id="special-product" class="w100min">
+<div id="special-product" class="w100min bor-box">
 	<div class="title-page">
 		<h3>SẢN PHẨM NỔI BẬT</h3>
 	</div>

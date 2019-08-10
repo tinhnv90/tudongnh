@@ -13,4 +13,8 @@ class tblinvoiceDetail extends Model
     protected $fillable = [
         'idInvoiceDetail', 'idproduct', 'idinvoice','number','discount',
     ];
+
+    public function getProduct(){
+        return $this->belongsTo(tblproduct::class,'idproduct');
+    }
 }

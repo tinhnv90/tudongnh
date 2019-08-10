@@ -1,8 +1,7 @@
 #left{
-	width: calc(25% - 17px);
+	width: calc(25% - 2px);
 	min-height: 10px;
 	float: right;
-	margin-right: 15px;
 }
 /*--content right post--*/
 

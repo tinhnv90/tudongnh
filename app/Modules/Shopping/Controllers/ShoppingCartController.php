@@ -150,6 +150,26 @@ class ShoppingCartController extends Controller{
         if(!Auth::check())
             return redirect('dang-nhap');
 
+        $rules=[
+            'username'=>'required|string',
+            'phone'=>'required|numeric|digits:10',
+            'adress_order'=>'required|string'
+        ];
+        $messeger=[
+            'username.required'=>'Tên người nhận không được để trống',
+            'username.string'=>'Tên người nhận là một chuỗi ký tự a-z[A-Z]',
+            'phone.required'=>'SĐT người nhận không được để trống',
+            'phone.numeric'=>'SĐT là dữ liệu kiểu số nguyên 0-9',
+            'phone.digits'=>'SĐT có độ dài 10 chữ số',
+            'adress_order.required'=>'Trường địa chỉ không được để trống',
+            'adress_order.string'=>'Địa chỉ là một chuỗi ký tự'
+        ];
+
+        $validator=Validator::make($request->all(),$rules,$messeger);
+        if($validator->fails()){
+            return redirect('/gio-hang')->withErrors($validator);
+        }
+
         if($request->codeinvoice==null){
             tblinvoice::insert([
                 'id'=>$request->iduser,

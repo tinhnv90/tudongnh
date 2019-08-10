@@ -134,3 +134,7 @@ button[name="btnorder"]{
 	padding-right: 30px;
 	width: calc(100% - 30px);
 }
+.frmorder .color-tomato{
+	float: left;
+	padding-top: 5px;
+}

@@ -85,7 +85,7 @@
     display: none;
     padding-left: 10px;
     position: absolute;
-    left: calc(25% + 13px);
+    left: calc(25% + 11px);
     background: rgb(158, 132, 136);
     top: 395px;
     min-height: 360px;
@@ -101,8 +101,14 @@
 .facebook-plugin{
     text-align: center;
     padding-bottom: 10px;
+    margin-top: 25px;
+    width: calc(100% - 2px);
 }
-
+.facebook-plugin>.title-page>h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
 /*-------special-product-------*/
 #special-product{
     max-height: 845px;

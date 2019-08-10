@@ -15,7 +15,7 @@
 			}});
 			$.ajax({
 	            type : 'POST',
-	            url  : window.location.origin+'/remove-compare',
+	            url  : window.location.origin+'/tudongnh/remove-compare',
 	            data : {idproduct:$(this).attr('data-idproduct')},
 	            success :  function(data){
 	                $('li[data-idproduct="'+data.result+'"]').remove();

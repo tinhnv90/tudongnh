@@ -5,6 +5,7 @@
 @section('stylesheet')
 <link rel="stylesheet" type="text/css" href="{{$style.'profile.css'}}">
 <link rel="stylesheet" type="text/css" href="{{$style.'payment.css'}}">
+<link rel="stylesheet" type="text/css" href="{{$style.'left.css'}}">
 @stop
 @section('javascript')
 <script src="{{$script.'payment.js'}}"></script>

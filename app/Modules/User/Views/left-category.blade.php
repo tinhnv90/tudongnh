@@ -2,7 +2,7 @@
 	<div class="title-page bor-b">
 		<h3><p>TÀI KHOẢN</p></h3>
 	</div>
-	<div class="content w100min">
+	<div class="content w100min bor-b">
 		@if(!Auth::check())
 		<h3>
 			<i class="fas fa-angle-double-right"></i>
@@ -37,4 +37,7 @@
 		</h3>
 		@endif
 	</div>
+
+	@include('left.category')
+	@include('left.box-face')
 </div>

@@ -35,6 +35,15 @@ class UserController extends Controller
         }
 	}	
 	public function login(){
+		$listinvoice=tblinvoice::
+			where([['created_at','<>',date('Y-m-d')],'paid'=>0])->get();
+		if($listinvoice!=null){
+			$listinvoice=$listinvoice->toArray();
+			foreach ($listinvoice as $invoice) {
+				tblinvoiceDetail::where('idinvoice',$invoice['idinvoice'])->delete();
+				tblinvoice::where('idinvoice',$invoice['idinvoice'])->delete();
+			}
+		}
 		return view('User::login',$this->data);
 	}
 	public function post_login(Request $request){
@@ -122,6 +131,14 @@ class UserController extends Controller
 		return view('User::forgotPassword',$this->data);
 	}
 	public function transactionHistory(){
+		$listinvoice=tblinvoice::query()
+			->with('getDetail','getDetail.getProduct')
+			->where('id',Auth::user()->id)
+			->get();
+		if($listinvoice!=null){
+			$this->data['listinvoice']=$listinvoice->toArray();
+		}
+
 		return view('User::transactionHistory',$this->data);
 	}
 }

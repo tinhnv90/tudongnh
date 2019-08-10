@@ -1,0 +1,99 @@
+/*------------#category left--------------*/
+#left>div{
+    margin-bottom: 20px;
+    width: calc(100% - 2px);
+}
+#left>div:last-child{
+    margin-bottom: unset;
+}
+#left>div>.title-page{
+    background: rgba(255, 255, 255, 0.2);
+}
+#left>div>.title-page>h3{
+    padding: 5px 0px 10px;
+    text-align: center;
+}
+#category-left>ul{
+    padding-left: 10px;
+    width: calc(100% - 10px);
+}
+#category-left h3>a:hover{
+    text-decoration: underline;
+}
+#category-left .parent>ul{
+    display: none;
+    padding-left: 10px;
+    position: absolute;
+    left: calc(25% + 11px);
+    background: rgb(158, 132, 136);
+    top: 395px;
+    min-height: 360px;
+    z-index: 9;
+}
+#category-left .parent:hover ul{
+    display: block;
+}
+#category-left ul>li{
+    padding-bottom: 5px;
+}
+/*-------box-face left--------*/
+.facebook-plugin{
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    width: calc(100% - 2px);
+}
+.facebook-plugin>.title-page>h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/*------main-------*/
+#history>.title-page>h3{
+    background: rgba(255, 255, 255, 0.2);
+}
+.invoice-code{
+    padding: 15px 0px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    width: calc(100% - 15px);
+    padding-left: 15px;
+}
+.invoice-date{
+    font-weight: normal;
+    font-size: 15px;
+    margin-left: 20px;
+}
+.product{
+    width: calc(100% - 80px);
+}
+.product>li{
+    width: 100%;
+    min-height: 10px;
+    float: left;
+}
+.product>li:first-child>p{
+    min-height: 25px;
+}
+.product>li>p{
+    min-height: 42px;
+    float: left;
+    padding: 5px 0px;
+    margin: unset;
+    text-align: center;
+}
+.name{
+    width: calc(100% - 276px);
+}
+.code{
+    width: 150px;
+}
+.number{
+    width: 120px;
+}
+.paid{
+    float: right;
+    margin-right: 20px;
+    color: salmon;
+}
