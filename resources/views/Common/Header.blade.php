@@ -78,7 +78,7 @@
 						<i class="fa fa-user"></i>
 						@if(Auth::check())
 						<?php $user_done=Auth::user(); ?>
-						<p class="login-done">{{$user_done->name}}</p>
+						<p class="login-done" title="{{$user_done->name}}">{{$user_done->name}}</p>
 						@endif
 						<i class="fas fa-caret-down"></i>
 					</a>

@@ -96,6 +96,13 @@
 				@endif
 			</div>
 			<div class="w100min">
+				<label>Giới Tính :</label>
+				<input type="radio" name="sex" value="male" checked>
+				<span>Nam</span>
+				<input type="radio" name="sex" value="famale">
+				<span>Nữ</span>
+			</div>
+			<div class="w100min">
 				<label>Số Điện Thoại<span class="red">*</span> :</label>
 				<input type="text" name="phone" placeholder="vd: 0123456789">
 				@if($errors->has('phone') && isset($request['btnregister']))

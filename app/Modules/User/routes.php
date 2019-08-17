@@ -16,6 +16,9 @@
 
 			Route::get('tai-khoan',"UserController@myAccount")
 				->middleware('authCheckLogin');
+			Route::post('tai-khoan',"UserController@updateAccount")
+				->middleware('authCheckLogin');
+
 			Route::get('lich-su-giao-dich',"UserController@transactionhistory")
 				->middleware('authCheckLogin');
 		}

@@ -15,7 +15,7 @@
 		@endif
 		<h3>
 			<i class="fas fa-angle-double-right"></i>
-			<a href="{{asset('/tai-khoan')}}" title="Thông Tin Khách Hàng">Thông Tin Khách Hàng</a>
+			<a href="{{asset('/tai-khoan')}}" title="Thông Tin Khách Hàng">Thông Tin Cá Nhân</a>
 		</h3>
 		<h3>
 			<i class="fas fa-angle-double-right"></i>

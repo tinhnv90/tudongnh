@@ -82,3 +82,11 @@
 	text-align: center;
 	color: tomato;
 }
+.frame-register>form>div>input[name="sex"]{
+    width: 25px;
+    height: 18px;
+    margin-left: 100px;
+}
+.frame-register>form>div>span{
+	float: left;
+}

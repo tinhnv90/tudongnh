@@ -159,6 +159,11 @@ h3{margin: unset;}
 #topbar-top .myaccount:hover .login a{
 	color: rgb(152, 139, 146);
 }
+.myaccount .login-done{
+    width: 93px;
+    overflow: hidden;
+    height: 100%;
+}
 #topbar-contact{
     height: 100%;
     min-width: 10px;
